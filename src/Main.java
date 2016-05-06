@@ -5,6 +5,16 @@ import logic.Rules;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/* TODO:
+    - Validar carta escolhida
+    - Validar posição no tabuleiro escolhida
+    - Retirar carta da mão
+    - Verificar vizinhança das cartas no tabuleiro
+    - Determinar cor das cartas (para ver qual jogador está a ganhar)
+
+
+  */
+
 
 // Just using this main class to test and debug stuff.
 public class Main {
@@ -47,7 +57,6 @@ public class Main {
             System.out.print("A - Play card: ");
             Scanner input = new Scanner(System.in);
             cardNo = input.nextInt();
-            board.printBoard2();
             System.out.print("A - Choose Column Number: ");
             input = new Scanner(System.in);
             colPos = input.nextInt();
