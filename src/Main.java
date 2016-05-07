@@ -1,20 +1,18 @@
 import logic.Board;
 import logic.Card;
-import logic.Rules;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /* TODO:
-    - Validar carta escolhida
-    - Validar posição no tabuleiro escolhida
     - Retirar carta da mão
     - Verificar vizinhança das cartas no tabuleiro
-    - Determinar cor das cartas (para ver qual jogador está a ganhar)
+    - Determinar cor das cartas
+    - Verificar quem está a vencer (contando a cor das cartas)
 
-
+    Rules.java
+    - Determine its necessity, since Game.java might do the same thing
   */
-
 
 // Just using this main class to test and debug stuff.
 public class Main {
@@ -23,7 +21,7 @@ public class Main {
 
         ArrayList<Card> playerAHand = new ArrayList<Card>();
         ArrayList<Card> playerBHand = new ArrayList<Card>();
-        //Board board = new Board();
+
         Board board = new Board(true);
 
         Card card1 = new Card(1, "Geezard", new int[]{1, 4, 1, 5});
@@ -63,8 +61,8 @@ public class Main {
             System.out.print("A - Choose Row Number: ");
             input = new Scanner(System.in);
             rowPos = input.nextInt();
-            board.addCardToBoard2(playerAHand.get(cardNo - 1), (colPos - 1), (rowPos - 1));
-            board.printBoard2();
+            board.addCardToBoard(playerAHand.get(cardNo - 1), (colPos - 1), (rowPos - 1));
+            board.printBoard();
 
             for (int i = 0; i < playerBHand.size(); i++) {
                 System.out.print(" || " + (i + 1) + " : " + playerBHand.get(i).getCardName() + " || ");
@@ -78,54 +76,8 @@ public class Main {
             System.out.print("B - Choose Row Number: ");
             input = new Scanner(System.in);
             rowPos = input.nextInt();
-            board.addCardToBoard2(playerBHand.get(cardNo - 1), (colPos - 1), (rowPos - 1));
-            board.printBoard2();
+            board.addCardToBoard(playerBHand.get(cardNo - 1), (colPos - 1), (rowPos - 1));
+            board.printBoard();
         }
-
-        /*while (playerAHand.size() != 0 || playerBHand.size() != 0) {
-            int cardNo;
-            int colPos, rowPos;
-            for (int i = 0; i < playerAHand.size(); i++) {
-                System.out.print(" || " + (i + 1) + " : " + playerAHand.get(i).getCardName() + " || ");
-            }
-            System.out.print("A - Play card: ");
-            Scanner input = new Scanner(System.in);
-            cardNo = input.nextInt();
-            /*position = new Rules().checkCardIntoBoardPosition('A');
-            System.out.println("cenas" + position);*/
-           /* System.out.print("A - Choose Column Number: ");
-            input = new Scanner(System.in);
-            colPos = input.nextInt();
-            System.out.print("A - Choose Row Number: ");
-            input = new Scanner(System.in);
-            rowPos = input.nextInt();
-            board.addCardToBoard(playerAHand.get(cardNo - 1), (colPos - 1));
-            board.printBoard();
-
-            /*if(new Rules().checkVicinity(,playerAHand.get(cardNo-1)))
-
-            else
-            {
-                System.out.print("A - Choose Position: ");
-                input = new Scanner(System.in);
-                position = input.nextInt();
-            }
-
-            for (int i = 0; i < playerBHand.size(); i++) {
-                System.out.print(" || " + (i + 1) + " : " + playerBHand.get(i).getCardName() + " || ");
-            }
-            System.out.print("B - Play card: ");
-            input = new Scanner(System.in);
-            cardNo = input.nextInt();
-            //position = new Rules().checkCardIntoBoardPosition('B');
-            System.out.print("B - Choose Column Number: ");
-            input = new Scanner(System.in);
-            colPos = input.nextInt();
-            System.out.print("B - Choose Row Number: ");
-            input = new Scanner(System.in);
-            rowPos = input.nextInt();
-            board.addCardToBoard(playerBHand.get(cardNo - 1), colPos);
-            board.printBoard();
-        }*/
     }
 }
