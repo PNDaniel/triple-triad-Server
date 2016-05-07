@@ -1,6 +1,5 @@
 package logic;
 
-
 import misc.Support;
 
 import java.util.ArrayList;
@@ -17,6 +16,7 @@ public class Game {
         this.playerBHand = playerBHand;
         this.gameBoard = new Board(true);
     }
+
 
     public boolean coinToss() {
         Random randomNum = new Random();
@@ -37,7 +37,7 @@ public class Game {
                 if (playerAHand.get(i).getCardID() == card.getCardID())
                     return true;
                 else for (i = 0; i < playerBHand.size(); i++)
-                    if (playerAHand.get(i).getCardID() == card.getCardID())
+                    if (playerBHand.get(i).getCardID() == card.getCardID())
                         return true;
         return false;
     }
@@ -67,7 +67,23 @@ public class Game {
         return true;
     }
 
-    public void checkWinner() {
-        // TODO verifies the winner (who has more cards with it's colour
+    public void checkScore() {
+        // TODO Still needs more, atm only verifies colour of cards on Board, but colour on hand also matters Need testing
+        int pink = 0; // player A
+        int blue = 0; // player B
+        for (int row = 0; row < Support.MAX_ROW; row++)
+            for (int col = 0; col < Support.MAX_COL; col++)
+                if (gameBoard.getBoardGrid()[row][col].getCardColour() == 1)
+                    pink++;
+                else if (gameBoard.getBoardGrid()[row][col].getCardColour() == 2)
+                    blue++;
+        for (int i = 0; i < Support.PLAYER_HAND; i++) {
+            if (playerAHand.get(i).getCardColour() == 1) {
+                pink++;
+            }
+            if (playerBHand.get(i).getCardColour() == 2) {
+                blue++;
+            }
+        }
     }
 }

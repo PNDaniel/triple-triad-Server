@@ -10,13 +10,15 @@ public class Card {
     private String cardImage;
     private int[] cardRanks = new int[4]; // Each card has four numbers (known as ranks); each number corresponds to one of the four sides of the card,
     private Support.Elements cardElements;
+    private int cardColour; // Player "null" - colour 0 - "null" ||| Player A - colour 1 - pink ||| Player B - colour 2 - blue
 
     // Em baixo estão algumas "varíáveis" que encontrei na wiki deles, not sure se deviam ficar nesta classe
     private int numberOfCopies;
-    private int cardColour; // 0 - pink card = opponent; 1- blue card = player
+
 
     public Card() {
         cardName = "null";
+        cardColour = 0;
     }
 
     // Constructor mainly for testing
@@ -81,5 +83,13 @@ public class Card {
 
     public void setCardElements(Support.Elements cardElements) {
         this.cardElements = cardElements;
+    }
+
+    public int getCardColour() {
+        return cardColour;
+    }
+
+    public void setCardColour(int cardColour) {
+        this.cardColour = cardColour;
     }
 }

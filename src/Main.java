@@ -7,11 +7,8 @@ import java.util.Scanner;
 /* TODO:
     - Retirar carta da mão
     - Verificar vizinhança das cartas no tabuleiro
-    - Determinar cor das cartas
-    - Verificar quem está a vencer (contando a cor das cartas)
+    - Determinar cor das cartas (no momento da atribuição das cartas aos jogadores alterar as cores delas
 
-    Rules.java
-    - Determine its necessity, since Game.java might do the same thing
   */
 
 // Just using this main class to test and debug stuff.
