@@ -2,6 +2,7 @@ package logic;
 
 import misc.Support;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -17,6 +18,17 @@ public class Game {
         this.gameBoard = new Board(true);
     }
 
+    public ArrayList<Card> getPlayerAHand() {
+        return playerAHand;
+    }
+
+    public ArrayList<Card> getPlayerBHand() {
+        return playerBHand;
+    }
+
+    public Board getGameBoard() {
+        return gameBoard;
+    }
 
     public boolean coinToss() {
         Random randomNum = new Random();
