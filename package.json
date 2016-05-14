@@ -1,0 +1,25 @@
+{
+  "name": "triple-triad",
+  "version": "1.0.0",
+  "description": "a card game originating from Final Fantasy VIII.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PNDaniel/triple_triad.git"
+  },
+  "keywords": [
+    "nodejs",
+    "socket.io",
+    "hapijs",
+    "angularjs",
+    "\"triple",
+    "triad\"",
+    "\"final",
+    "fantasy\""
+  ],
+  "author": "FEUP - SDIS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PNDaniel/triple_triad/issues"
+  },
+  "homepage": "https://github.com/PNDaniel/triple_triad#readme"
+}
