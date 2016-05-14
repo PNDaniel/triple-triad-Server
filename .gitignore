@@ -24,3 +24,6 @@ jspm_packages/
 
 # Optional npm cache directory
 .npm
+
+# VSCode Javascript's config files
+jsconfig.json
