@@ -1,6 +1,6 @@
 # Triple Triad
 
-## [Live version - Soon&trade;](https://cdn.meme.am/instances/59119438.jpg)
+## [Live version](http://triple-triad.ivolimasilva.xyz/)
 
 ## Table of contents
 * [Wiki Log](#wiki-log)
