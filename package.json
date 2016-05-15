@@ -7,7 +7,7 @@
     "url": "git+https://github.com/PNDaniel/triple_triad.git"
   },
   "scripts": {
-    "start": "node ./server/server.js"
+    "start": "node ./src/server.js"
   },
   "keywords": [
     "nodejs",
