@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/PNDaniel/triple_triad#readme",
   "dependencies": {
-    "fs": "0.0.2",
-    "hapi": "^13.4.0",
-    "morgan": "^1.7.0",
-    "socket.io": "^1.4.6"
+    "good": "^7.0.0",
+    "good-console": "^6.1.1",
+    "good-squeeze": "^3.0.1",
+    "hapi": "^13.4.0"
   }
 }

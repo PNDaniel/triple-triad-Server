@@ -3,30 +3,43 @@
 const Hapi = require('hapi'),
     server = new Hapi.Server();
 
-server.connection({ port: 8080 });
+server.connection({ port: process.argv[2] });
+
+const options = {
+    ops: {
+        interval: 0
+    },
+    reporters: {
+        console: [{
+            module: 'good-squeeze',
+            name: 'Squeeze',
+            args: [{
+                log: '*',
+                response: '*'
+            }]
+        }, {
+                module: 'good-console'
+            }, 'stdout']
+    }
+};
 
 server.route({
     method: 'GET',
-    path: '/',
+    path: '/api/test',
     handler: function (request, reply) {
-        reply('Hello, world!');
+        reply('Hello world from ' + server.info.uri);
     }
 });
 
-server.route({
-    method: 'GET',
-    path: '/{name}',
-    handler: function (request, reply) {
-        reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
-    }
-});
-
-server.start((err) => {
-
+server.register({
+    register: require('good'),
+    options: options
+}, (err) => {
     if (err) {
-        throw err;
+        console.error(err);
+    } else {
+        server.start(() => {
+            console.info('Server running at:', server.info.uri);
+        });
     }
-
-    console.log('Server running at:', server.info.uri);
-
-})
+});
