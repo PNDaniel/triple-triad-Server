@@ -1,4 +1,4 @@
-# Triple Triad
+# Triple Triad - Server
 
 ## [Live version](http://triple-triad.ivolimasilva.xyz/)
 
