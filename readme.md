@@ -9,7 +9,7 @@
 
 ## Wiki log
 * [Project Architecture](https://cdn.meme.am/instances/59119438.jpg) - Soon&trade;
-* [Installation](https://cdn.meme.am/instances/59119438.jpg) - Really Soon&trade;
+* [Installation](https://github.com/PNDaniel/triple_triad/wiki/Installation)
 
 ## Team
 * Developers
