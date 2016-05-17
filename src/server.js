@@ -25,9 +25,15 @@ const options = {
 
 server.route({
     method: 'GET',
-    path: '/api/test',
+    path: '/api/status',
     handler: function (request, reply) {
-        reply('Hello world from ' + server.info.uri);
+        reply({
+            'ip': server.info.ip,
+            'port': server.info.port,
+            'conn_db': false,
+            'conn_fb': false,
+            'conn_tw': false
+        });
     }
 });
 
@@ -39,7 +45,7 @@ server.register({
         console.error(err);
     } else {
         server.start(() => {
-            console.info('Server running at:', server.info.uri);
+            console.info('Server running at: ', server.info.uri);
         });
     }
 });
