@@ -4,6 +4,8 @@
 
     module.exports = function (server) {
 
+        require('./auth.js')(server);
+
         // Status route
         server.route({
             method: 'GET',
