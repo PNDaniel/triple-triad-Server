@@ -2,44 +2,24 @@
 
     'use strict';
 
-    const Hapi = require('hapi'),
-        server = new Hapi.Server();
+    var express = require('express'),
+        server = express(),
+        http = require('http').Server(server),
+        morgan = require('morgan'),
+        cookieParser = require('cookie-parser');
 
-    server.connection({ port: process.argv[2] });
+    // Outputs simple log information to the console.
+    server.use(morgan('dev'));
 
-    const options = {
-        ops: {
-            interval: 0
-        },
-        reporters: {
-            console: [{
-                module: 'good-squeeze',
-                name: 'Squeeze',
-                args: [{
-                    log: '*',
-                    response: '*'
-                }]
-            }, {
-                    module: 'good-console'
-                }, 'stdout']
-        }
-    };
+    // Cookie Parser middleware to set cookie from server side
+    server.use(cookieParser());
 
-    // Calling the router code
-    require('./routes/router.js')(server);
+    // Calls the router where all routes are called. This is done so the 'server.js' file is cleaner and more maintainable.
+    require('./routes/router')(server, http);
 
-    server.register({
-        register: require('good'),
-        options: options
-    }, (err) => {
-        if (err) {
-            console.error(err);
-        } else {
-            server.start(() => {
-                console.info('Server running at: ', server.info.uri);
-            });
-        }
+    // Starts the server using received as input
+    http.listen(process.argv[2], function () {
+        console.log('Server listening on port ' + http.address().port);
     });
-
 
 } ());

@@ -2,24 +2,22 @@
 
     'use strict';
 
-    module.exports = function (server) {
+    // Main router where all routes are called. This is done so the project code is cleaner and more maintainable.
+    module.exports = function (server, http) {
 
-        require('./auth.js')(server);
-
-        // Status route
-        server.route({
-            method: 'GET',
-            path: '/api/status',
-            handler: function (request, reply) {
-                reply({
-                    'ip': server.info.ip,
-                    'port': server.info.port,
-                    'conn_db': false,
-                    'conn_fb': false,
-                    'conn_tw': false
-                });
-            }
+        // Route to send random quote
+        server.get('/api/status', function (req, res) {
+            res.status(200).json({
+                'ip': http.address().address,
+                'port': http.address().port,
+                'conn_db': false,
+                'conn_fb': false,
+                'conn_tw': false
+            });
         });
+
+        // Require the routes related to triple triad's authentication
+        require('./auth/auth-router')(server);
 
     };
 
