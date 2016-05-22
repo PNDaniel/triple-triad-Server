@@ -6,7 +6,20 @@
         server = express(),
         http = require('http').Server(server),
         morgan = require('morgan'),
-        cookieParser = require('cookie-parser');
+        cookieParser = require('cookie-parser'),
+        db_users = require('./database/db-users');
+
+    // Create a connection to the users' database
+    db_users.connect()
+        .then(function () {
+            // Sending the success to the log file
+            console.log('@server.js: Connected to users\' database.');
+        })
+        .catch(function (err) {
+            // Sending the error to the log file
+            console.log('@server.js: Can\'t connect to users\' database.');
+            console.log(err);
+        });
 
     // Outputs simple log information to the console.
     server.use(morgan('dev'));

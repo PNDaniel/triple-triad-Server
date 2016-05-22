@@ -2,51 +2,55 @@
 
     'use strict';
 
-    var passport = require('passport'),
-        Strategy = require('passport-facebook').Strategy,
-        secret_fb = require('../../../secrets/facebook');
+    var Strategy = require('passport-facebook').Strategy,
+        secret_fb = require('../../../secrets/facebook'),
+        db_users = require('../../database/db-users'),
+        www = require('../../../secrets/website');
 
     // Main router where facebook authentication routes are called. This is done so the project code is cleaner and more maintainable.
-    module.exports = function (server) {
+    module.exports = function (server, passport) {
 
         passport.use(new Strategy({
             clientID: secret_fb.clientID,
             clientSecret: secret_fb.clientSecret,
-            callbackURL: 'http://localhost:8080/api/login/facebook/return',
+            callbackURL: 'http://' + www.url + '/api/auth/facebook/callback',
             profileFields: ['name', 'emails']
         },
-            function (accessToken, refreshToken, profile, cb) {
-                // TODO: Connect to database
-                //console.log(profile);
-                return cb(null, profile);
+            function (accessToken, refreshToken, profile, next) {
+                db_users.select_fb(profile._json.id)
+                    .then(function (user) {
+                        return next(null, user);
+                    })
+                    .catch(function (err) {
+                        var user = {
+                            email: profile._json.email,
+                            name: profile._json.first_name + ' ' + profile._json.last_name,
+                            facebook_id: profile._json.id
+                        };
+                        db_users.insert(user)
+                            .then(function (data) {
+                                return next(null, user);
+                            })
+                            .catch(function (error) {
+                                return next(null, null);
+                            });
+                    });
             }));
 
-        passport.serializeUser(function (user, done) {
-            done(null, user);
-        });
-
-        passport.deserializeUser(function (user, done) {
-            done(null, user);
-        });
-
-        // Initialize Passport and restore authentication state, if any, from the session.
-        server.use(passport.initialize());
-        server.use(passport.session());
-
-        server.get('/api/login/facebook',
+        server.get('/api/auth/facebook',
             passport.authenticate('facebook'));
 
-        // TODO: Redirects and set cookie
-        server.get('/api/login/facebook/return',
+        server.get('/api/auth/facebook/callback',
             passport.authenticate('facebook', {
-                failureRedirect: '/login'
+                failureRedirect: '/'
             }),
             function (req, res) {
-                //console.log(req.user._json.first_name + ' ' + req.user._json.last_name + ' ' + req.user._json.email);
-                res.cookie('session', req.user._json.email, {
-                    maxAge: 900000, httpOnly: true
+                // TODO: Encrypt _id & calculate cookie life time
+                res.cookie('session', req.user._id, {
+                    maxAge: 14 * 24 * 3600000,
+                    httpOnly: true
                 });
-                res.redirect('http://localhost/lobby');
+                res.redirect('http://' + www.url + '/lobby/');
             });
 
     };
