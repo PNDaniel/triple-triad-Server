@@ -10,9 +10,8 @@
             res.status(200).json({
                 'ip': http.address().address,
                 'port': http.address().port,
-                'conn_db': false,
-                'conn_fb': false,
-                'conn_tw': false
+                'db_users': server.get('db_users'),
+                'db_games': server.get('db_games')
             });
         });
 

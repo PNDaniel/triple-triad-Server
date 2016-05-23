@@ -38,10 +38,14 @@
             }));
 
         server.get('/api/auth/facebook',
-            passport.authenticate('facebook'));
+            passport.authenticate('facebook', {
+                session: false,
+                scope: []
+            }));
 
         server.get('/api/auth/facebook/callback',
             passport.authenticate('facebook', {
+                session: false,
                 failureRedirect: '/'
             }),
             function (req, res) {

@@ -7,19 +7,42 @@
         http = require('http').Server(server),
         morgan = require('morgan'),
         cookieParser = require('cookie-parser'),
-        db_users = require('./database/db-users');
+        db_users = require('./database/db-users'),
+        db_games = require('./database/db-games');
 
     // Create a connection to the users' database
     db_users.connect()
         .then(function () {
             // Sending the success to the log file
             console.log('@server.js: Connected to users\' database.');
+            server.set('db_users', true);
         })
         .catch(function (err) {
             // Sending the error to the log file
             console.log('@server.js: Can\'t connect to users\' database.');
-            console.log(err);
+            server.set('db_users', false);
         });
+
+    // Create a connection to the games' database
+    db_games.connect()
+        .then(function () {
+            // Sending the success to the log file
+            console.log('@server.js: Connected to games\' database.');
+            server.set('db_games', true);
+        })
+        .catch(function (err) {
+            // Sending the error to the log file
+            console.log('@server.js: Can\'t connect to games\' database.');
+            server.set('db_games', false);
+        });
+
+    server.all('/*', function (req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+        res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+        // Pass to next layer of middleware
+        next();
+    });
 
     // Outputs simple log information to the console.
     server.use(morgan('dev'));
