@@ -72,22 +72,6 @@
         });
     };
 
-    function return_user(err, user, resolve, reject) {
-        // If found an error in the query
-        if (err) {
-            reject(err);
-        }
-        // If found a user or user doesn't exist
-        if (user) {
-            delete user.password;
-            resolve(user);
-        } else {
-            reject({
-                error: 'No user found.'
-            });
-        }
-    };
-
     // Select a user by id
     exports.select_id = function (id) {
         return new Promise(function (resolve, reject) {
@@ -95,7 +79,19 @@
                 _id: id
             });
             query.findOne(function (err, user) {
-                return_user(err, user, resolve, reject);
+                // If found a user or user doesn't exist
+                if (user) {
+                    delete user.password;
+                    resolve(user);
+                } else {
+                    reject({
+                        error: 'No user found.'
+                    });
+                }
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
             });
         });
     };
@@ -107,7 +103,19 @@
                 email: email
             });
             query.findOne(function (err, user) {
-                return_user(err, user, resolve, reject);
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+                // If found a user or user doesn't exist
+                if (user) {
+                    delete user.password;
+                    resolve(user);
+                } else {
+                    reject({
+                        error: 'No user found.'
+                    });
+                }
             });
         });
     };
@@ -119,7 +127,19 @@
                 name: name
             });
             query.findOne(function (err, user) {
-                return_user(err, user, resolve, reject);
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+                // If found a user or user doesn't exist
+                if (user) {
+                    delete user.password;
+                    resolve(user);
+                } else {
+                    reject({
+                        error: 'No user found.'
+                    });
+                }
             });
         });
     };
@@ -131,7 +151,19 @@
                 facebook_id: facebook_id
             });
             query.findOne(function (err, user) {
-                return_user(err, user, resolve, reject);
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+                // If found a user or user doesn't exist
+                if (user) {
+                    delete user.password;
+                    resolve(user);
+                } else {
+                    reject({
+                        error: 'No user found.'
+                    });
+                }
             });
         });
     };
@@ -143,7 +175,19 @@
                 twitter_id: twitter_id
             });
             query.findOne(function (err, user) {
-                return_user(err, user, resolve, reject);
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+                // If found a user or user doesn't exist
+                if (user) {
+                    delete user.password;
+                    resolve(user);
+                } else {
+                    reject({
+                        error: 'No user found.'
+                    });
+                }
             });
         });
     };
