@@ -2,7 +2,8 @@
 
     'use strict';
 
-    var Strategy = require('passport-facebook').Strategy,
+    var jwt = require('./auth-jwt'),
+        Strategy = require('passport-facebook').Strategy,
         secret_fb = require('../../../secrets/facebook'),
         db_users = require('../../database/db-users'),
         env = require('../../../secrets/environment');
@@ -48,12 +49,16 @@
                 failureRedirect: '/'
             }),
             function (req, res) {
-                // TODO: Encrypt _id & calculate cookie life time
-                res.cookie('session', req.user._id, {
-                    maxAge: 14 * 24 * 3600000,
-                    httpOnly: true
-                });
-                res.redirect('http://' + env.url + '/lobby');
+                jwt.encode({
+                    id: req.user._id
+                })
+                    .then(function (encoded) {
+                        res.cookie('session', encoded, {
+                            maxAge: 14 * 24 * 3600000,
+                            httpOnly: true
+                        });
+                        res.redirect('http://' + env.url + '/lobby');
+                    });
             });
 
     };

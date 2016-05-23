@@ -39,7 +39,7 @@
                 if (error) {
                     reject(error);
                 } else {
-                    resolve();
+                    resolve(uri);
                 }
             });
         });
@@ -82,7 +82,9 @@
             delete user.password;
             resolve(user);
         } else {
-            reject('No user found.');
+            reject({
+                error: 'No user found.'
+            });
         }
     };
 

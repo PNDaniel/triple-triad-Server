@@ -12,7 +12,7 @@
 
     // Create a connection to the users' database
     db_users.connect()
-        .then(function () {
+        .then(function (uri) {
             // Sending the success to the log file
             console.log('@server.js: Connected to users\' database.');
             server.set('db_users', true);
@@ -25,7 +25,7 @@
 
     // Create a connection to the games' database
     db_games.connect()
-        .then(function () {
+        .then(function (uri) {
             // Sending the success to the log file
             console.log('@server.js: Connected to games\' database.');
             server.set('db_games', true);

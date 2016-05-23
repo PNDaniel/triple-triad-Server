@@ -11,7 +11,7 @@
     // Connect to database
     exports.connect = function () {
         return new Promise(function (resolve, reject) {
-            reject('test');
+            reject(uri);
         });
     };
 
