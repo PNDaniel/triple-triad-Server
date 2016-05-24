@@ -6,6 +6,7 @@
         server = express(),
         http = require('http').Server(server),
         morgan = require('morgan'),
+        bodyParser = require('body-parser'),
         cookieParser = require('cookie-parser'),
         db_users = require('./database/db-users'),
         db_games = require('./database/db-games');
@@ -46,6 +47,12 @@
 
     // Outputs simple log information to the console.
     server.use(morgan('dev'));
+
+    // Allows the server to read JSON files
+    server.use(bodyParser.urlencoded({
+        extended: false
+    }));
+    server.use(bodyParser.json());
 
     // Cookie Parser middleware to set cookie from server side
     server.use(cookieParser());
