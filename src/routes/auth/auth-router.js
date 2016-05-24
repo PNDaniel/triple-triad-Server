@@ -64,6 +64,15 @@
                 });
         });
 
+        // Route to logout a user
+        server.post('/api/auth/logout', function (req, res) {
+            res.cookie('session', null, {
+                maxAge: 0,
+                httpOnly: true
+            });
+            res.sendStatus(200);
+        });
+
     };
 
 } ());
