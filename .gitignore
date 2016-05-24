@@ -27,3 +27,6 @@ jspm_packages/
 
 # VSCode Javascript's config files
 jsconfig.json
+
+# Secrets folder
+secrets/
