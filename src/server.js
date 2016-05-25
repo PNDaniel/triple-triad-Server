@@ -8,8 +8,10 @@
         morgan = require('morgan'),
         bodyParser = require('body-parser'),
         cookieParser = require('cookie-parser'),
+        session = require('express-session'),
         db_users = require('./database/db-users'),
-        db_games = require('./database/db-games');
+        db_games = require('./database/db-games'),
+        env = require('../secrets/environment');
 
     // Create a connection to the users' database
     db_users.connect()
@@ -56,6 +58,13 @@
 
     // Cookie Parser middleware to set cookie from server side
     server.use(cookieParser());
+
+    // Enable Session for PassportJS
+    server.use(session({
+        secret: env.token,
+        resave: false,
+        saveUninitialized: true
+    }));
 
     // Calls the router where all routes are called. This is done so the 'server.js' file is cleaner and more maintainable.
     require('./routes/router')(server, http);

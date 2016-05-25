@@ -11,8 +11,7 @@
         UserSchema = new Schema({
             email: {
                 type: String,
-                unique: true,
-                required: true
+                unique: true
             },
             name: {
                 type: String,
@@ -228,6 +227,23 @@
         });
     };
 
+    // Add a password to a account created with a social network
+    exports.update_fb = function (id, facebook_id) {
+        return new Promise(function (resolve, reject) {
+            User.update({
+                _id: id
+            }, {
+                    facebook_id: facebook_id
+                }, function (err) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve();
+                    }
+                });
+        });
+    };
+
     // Verifies e-mail and password for a user
     exports.select_email_pw = function (email, password) {
         return new Promise(function (resolve, reject) {
@@ -257,5 +273,7 @@
             });
         });
     };
+
+
 
 } ());

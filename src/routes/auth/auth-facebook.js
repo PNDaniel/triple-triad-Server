@@ -28,13 +28,26 @@
                             name: profile._json.first_name + ' ' + profile._json.last_name,
                             facebook_id: profile._json.id
                         };
-                        db_users.insert(user)
-                            .then(function (user) {
-                                return next(null, user);
+                        db_users.select_email(user.email)
+                            .then(function (_user) {
+                                db_users.update_fb(_user._id, user.facebook_id)
+                                    .then(function () {
+                                        return next(null, _user);
+                                    })
+                                    .catch(function (error) {
+                                        return next(null, null);
+                                    });
                             })
-                            .catch(function (error) {
-                                return next(null, null);
+                            .catch(function (err) {
+                                db_users.insert(user)
+                                    .then(function (user) {
+                                        return next(null, user);
+                                    })
+                                    .catch(function (error) {
+                                        return next(null, null);
+                                    });
                             });
+
                     });
             }));
 
