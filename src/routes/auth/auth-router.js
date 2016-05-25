@@ -42,7 +42,7 @@
         require('./auth-facebook')(server, passport);
 
         // Require the routes related to twitter's authentication
-        require('./auth-twitter')(server);
+        require('./auth-twitter')(server, passport);
 
         // Require the routes related to triple triad's authentication
         require('./auth-triple-triad')(server);

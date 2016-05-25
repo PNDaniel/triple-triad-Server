@@ -11,8 +11,7 @@
         UserSchema = new Schema({
             email: {
                 type: String,
-                unique: true,
-                required: true
+                unique: true
             },
             name: {
                 type: String,
@@ -191,5 +190,90 @@
             });
         });
     };
+
+    // Update name
+    exports.update_name = function (id, name) {
+        return new Promise(function (resolve, reject) {
+            User.update({
+                _id: id
+            }, {
+                    name: name
+                }, function (err) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve();
+                    }
+                });
+        });
+    };
+
+    // Add a password to a account created with a social network
+    exports.update_pw = function (id, password) {
+        return new Promise(function (resolve, reject) {
+            bcrypt.hash(password, null, null, function (err, hash) {
+                User.update({
+                    _id: id
+                }, {
+                        password: hash
+                    }, function (err) {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve();
+                        }
+                    });
+            });
+        });
+    };
+
+    // Add a password to a account created with a social network
+    exports.update_fb = function (id, facebook_id) {
+        return new Promise(function (resolve, reject) {
+            User.update({
+                _id: id
+            }, {
+                    facebook_id: facebook_id
+                }, function (err) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve();
+                    }
+                });
+        });
+    };
+
+    // Verifies e-mail and password for a user
+    exports.select_email_pw = function (email, password) {
+        return new Promise(function (resolve, reject) {
+            var query = User.where({
+                email: email
+            });
+            query.findOne(function (err, user) {
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+                // If found a user or user doesn't exist
+                if (user) {
+                    bcrypt.compare(password, user.password, function (err, res) {
+                        if (res === true) {
+                            delete user.password;
+                            resolve(user);
+                        } else {
+                            reject('Wrong password.');
+                        }
+                    });
+                } else {
+                    reject({
+                        error: 'No user found.'
+                    });
+                }
+            });
+        });
+    };
+
+
 
 } ());
