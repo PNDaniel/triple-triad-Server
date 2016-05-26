@@ -81,7 +81,7 @@
             query.findOne(function (err, user) {
                 // If found a user or user doesn't exist
                 if (user) {
-                    delete user.password;
+                    user.password = undefined;
                     resolve(user);
                 } else {
                     reject({
@@ -109,7 +109,7 @@
                 }
                 // If found a user or user doesn't exist
                 if (user) {
-                    delete user.password;
+                    user.password = undefined;
                     resolve(user);
                 } else {
                     reject({
@@ -133,7 +133,7 @@
                 }
                 // If found a user or user doesn't exist
                 if (user) {
-                    delete user.password;
+                    user.password = undefined;
                     resolve(user);
                 } else {
                     reject({
@@ -157,7 +157,7 @@
                 }
                 // If found a user or user doesn't exist
                 if (user) {
-                    delete user.password;
+                    user.password = undefined;
                     resolve(user);
                 } else {
                     reject({
@@ -181,7 +181,7 @@
                 }
                 // If found a user or user doesn't exist
                 if (user) {
-                    delete user.password;
+                    user.password = undefined;
                     resolve(user);
                 } else {
                     reject({
@@ -260,7 +260,7 @@
                 if (user) {
                     bcrypt.compare(password, user.password, function (err, res) {
                         if (res === true) {
-                            delete user.password;
+                            user.password = undefined;
                             resolve(user);
                         } else {
                             reject('Wrong password.');

@@ -8,6 +8,9 @@
         // Require the routes related to triple triad's authentication
         require('./auth/auth-router')(server);
 
+        // Require the routes related to users
+        require('./user')(server);
+
         // Route to send random quote
         server.get('/api/status', function (req, res) {
             res.status(200).json({
