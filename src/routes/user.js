@@ -27,7 +27,13 @@
 
         // Route to get a user by ID
         server.get('/api/user/:id', function (req, res) {
-            res.sendStatus(501);
+            db_users.select_id(req.params.id)
+                .then(function (user) {
+                    res.status(200).json(user);
+                })
+                .catch(function (err) {
+                    res.status(404).json(err);
+                });
         });
 
     };
