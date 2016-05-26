@@ -4,7 +4,7 @@
 
     var express = require('express'),
         server = express(),
-        http = require('http').Server(server),
+        http = require('http').createServer(server),
         morgan = require('morgan'),
         bodyParser = require('body-parser'),
         cookieParser = require('cookie-parser'),
