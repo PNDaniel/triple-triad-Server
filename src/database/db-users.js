@@ -36,19 +36,6 @@
             }),
         User = mongoose.model('User', UserSchema);
 
-    // Connect to database
-    exports.connect = function () {
-        return new Promise(function (resolve, reject) {
-            mongoose.connect(uri, function (error) {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(uri);
-                }
-            });
-        });
-    };
-
     // Insert any type of user
     exports.insert = function (user) {
         return new Promise(function (resolve, reject) {

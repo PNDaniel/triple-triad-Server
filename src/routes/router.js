@@ -21,8 +21,7 @@
             res.status(200).json({
                 'ip': http.address().address,
                 'port': http.address().port,
-                'db_users': server.get('db_users'),
-                'db_games': server.get('db_games')
+                'db': server.get('db')
             });
         });
 
