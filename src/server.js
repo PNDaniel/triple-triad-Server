@@ -4,39 +4,26 @@
 
     var express = require('express'),
         server = express(),
-        http = require('http').Server(server),
+        http = require('http').createServer(server),
         morgan = require('morgan'),
         bodyParser = require('body-parser'),
         cookieParser = require('cookie-parser'),
         session = require('express-session'),
-        db_users = require('./database/db-users'),
-        db_games = require('./database/db-games'),
+        db = require('./database/db'),
         env = require('../secrets/environment');
 
     // Create a connection to the users' database
-    db_users.connect()
+    db.connect()
         .then(function (uri) {
             // Sending the success to the log file
-            console.log('@server.js: Connected to users\' database.');
-            server.set('db_users', true);
+            console.log('@server.js: Connected to database.');
+            server.set('db', true);
         })
         .catch(function (err) {
             // Sending the error to the log file
-            console.log('@server.js: Can\'t connect to users\' database.');
-            server.set('db_users', false);
-        });
-
-    // Create a connection to the games' database
-    db_games.connect()
-        .then(function (uri) {
-            // Sending the success to the log file
-            console.log('@server.js: Connected to games\' database.');
-            server.set('db_games', true);
-        })
-        .catch(function (err) {
-            // Sending the error to the log file
-            console.log('@server.js: Can\'t connect to games\' database.');
-            server.set('db_games', false);
+            console.log('@server.js: Can\'t connect to database.');
+            console.log(err);
+            server.set('db', false);
         });
 
     server.all('/*', function (req, res, next) {

@@ -21,6 +21,10 @@
             password: {
                 type: String
             },
+            status: {
+                type: String,
+                default: 'offline'
+            },
             facebook_id: {
                 type: Number
             },
@@ -31,19 +35,6 @@
                 collection: 'users'
             }),
         User = mongoose.model('User', UserSchema);
-
-    // Connect to database
-    exports.connect = function () {
-        return new Promise(function (resolve, reject) {
-            mongoose.connect(uri, function (error) {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(uri);
-                }
-            });
-        });
-    };
 
     // Insert any type of user
     exports.insert = function (user) {
@@ -275,6 +266,45 @@
         });
     };
 
+    exports.update_status = function (id, status) {
+        return new Promise(function (resolve, reject) {
+            User.update({
+                _id: id
+            }, {
+                    status: status
+                }, function (err) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve();
+                    }
+                });
+        });
+    };
 
+    exports.select_status = function (status) {
+        return new Promise(function (resolve, reject) {
+            var query = User.where({
+                status: status
+            });
+            query.find(function (err, users) {
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+                // If found a user or user doesn't exist
+                if (users) {
+                    for (var i = 0; i < users.length; i++) {
+                        users[i].password = undefined;
+                    }
+                    resolve(users);
+                } else {
+                    reject({
+                        error: 'No users found.'
+                    });
+                }
+            });
+        });
+    };
 
 } ());

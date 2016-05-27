@@ -1,0 +1,802 @@
+[
+    {
+        "name": "Dodo",
+        "description": "These large, flightless cloudkin originated from the island of Mazlaya, and were brought to the mainland by Qiqirn who bred them for their eggs. The free races of Eorzea have reared the rotund creatures ever since, though they are now valued primarily for their meat. Would-be poultry farmers be warned: when seeking to defend itself, a dodo will spit forth a sleep-inducing secretion.",
+        "rarity": 1,
+        "topValue": "4",
+        "rightValue": "2",
+        "bottomValue": "3",
+        "leftValue": "4",
+        "id": 0
+    },
+    {
+        "name": "Tonberry",
+        "description": "Little is known about this inscrutable race of man-like creatures that inhabits the ruins of Nym-a culture that reached its peak during the Fifth Astral Era. Tonberries wear clothing and are adept in the use of complex tools, both of which would seem to suggest a civilized level of intelligence. Recently discovered texts from Nymian times suggest that the green denizens of the Wanderer's Palace are the carriers of a terrible pestilence.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "2",
+        "bottomValue": "7",
+        "leftValue": "2",
+        "id": 1
+    },
+    {
+        "name": "Sabotender",
+        "description": "Found exclusively in arid regions, cactuars are known for their ability to survive extended periods under the scorching sun on naught but the moisture stored within their bodies. Conditioned by the brutal nature of their surroundings, cactuars are quick to defend themselves, launching a barrage of needle-like projectiles at potential predators-and the occasional unwary traveler.",
+        "rarity": 1,
+        "topValue": "4",
+        "rightValue": "3",
+        "bottomValue": "3",
+        "leftValue": "3",
+        "id": 2
+    },
+    {
+        "name": "Spriggan",
+        "description": "Spriggans are neither sprites nor faeries, but share similarities with both. They are known to inhabit rocky regions and the deep recesses of mines. These black-furred soulkin are famous for carrying a gem or chunk of ore about with them at all times-a custom which may explain the popularly held belief within the mining fraternity that they are bringers of good fortune. Their classification as soulkin is based on a theory expounded in the Codex of Stone, which asserts that the creatures are naught but vessels for the will of the earth.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "3",
+        "bottomValue": "4",
+        "leftValue": "4",
+        "id": 3
+    },
+    {
+        "name": "Pudding",
+        "description": "These gelatinous creatures spawn in the agglomerations of residual matter that sometimes form in the void. Though able to mimic rudimentary sounds of speech in order to draw forth their prey, they are not thought to be especially intelligent beings. As a relatively low-ranked voidsent, flans occupy the tenth rung of the hierarchy.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "4",
+        "bottomValue": "3",
+        "leftValue": "5",
+        "id": 4
+    },
+    {
+        "name": "Bomb",
+        "description": "This barely contained sphere of volatile gas and flame occupies the eleventh rung of the voidsent's hierarchy of twelve. Bombs must replenish their internal reserves of fuel in order to survive, and are drawn to consume any source of oil or fat that they encounter, be it plant, animal, or man. Grenades, an even more explosive species of bomb, are a place higher in the hierarchy, standing upon the tenth rung.",
+        "rarity": 1,
+        "topValue": "3",
+        "rightValue": "4",
+        "bottomValue": "3",
+        "leftValue": "3",
+        "id": 5
+    },
+    {
+        "name": "Mandragora",
+        "description": "The enigmatic mandragoras were first observed in the aftermath of the Seventh Umbral Era. It is not known whence they came, or if they even existed prior to the Calamity. Preliminary studies appear to suggest that the diminutive seedkin are sentient and capable of an advanced form of nonverbal communication, but further research is required to confirm these findings. The rest is mere speculation.",
+        "rarity": 1,
+        "topValue": "4",
+        "rightValue": "2",
+        "bottomValue": "5",
+        "leftValue": "3",
+        "id": 6
+    },
+    {
+        "name": "Coblyn",
+        "description": "The coblyn is a creature of startling appearance that skitters around on its tentacle-like appendages in search of ore. Gridanian scholars claim that a coblyn is an animal that fuses minerals to its body to create a defensive shell. Ul'dahn scholars dispute this theory, stating that these soulkin are, in fact, sentient clumps of geological matter that have adopted biological organs in order to facilitate propagation.",
+        "rarity": 1,
+        "topValue": "3",
+        "rightValue": "3",
+        "bottomValue": "3",
+        "leftValue": "4",
+        "id": 7
+    },
+    {
+        "name": "Morbol",
+        "description": "The morbol is a terrible beast that moves upon its slime-covered vines and roots. Highly aggressive, it kills both animals and plants with a combination of its noxious breath and ceaselessly flailing tendrils. Upon occasion, the beast will also emit a sweet-smelling gas which induces a deep sleep. Rather than rending or chewing, the fang-shaped thorns which line the morbol's maw serve to hold prey immobile during digestion.",
+        "rarity": 1,
+        "topValue": "5",
+        "rightValue": "2",
+        "bottomValue": "5",
+        "leftValue": "2",
+        "id": 8
+    },
+    {
+        "name": "Coeurl",
+        "description": "Native to the regions of the Near East, these predatory quadrupeds are unrivaled in their savagery. A coeurl subdues its prey by unleashing electrical shocks from the two whip-like appendages that frame its fang-lined jaws. The feral specimens encountered in Eorzea descend from escaped war beasts once trained on a remote island at the mouth of the Rothlyt Sound known as the Pearl.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "5",
+        "bottomValue": "2",
+        "leftValue": "5",
+        "id": 9
+    },
+    {
+        "name": "Ahriman",
+        "description": "Ahriman are a family of voidsent that manifest in the physical plane by investing their essences in the eyes of animals. They are possessed of great arcane ability, and fly by clawing their way along airborne currents of aether. According to studies of voidsent hierarchy, the ahriman family is of middling class, its various forms occupying the fourth and fifth rungs.",
+        "rarity": 1,
+        "topValue": "5",
+        "rightValue": "5",
+        "bottomValue": "2",
+        "leftValue": "2",
+        "id": 10
+    },
+    {
+        "name": "Goobbue",
+        "description": "A goobbue is a lumbering beast that has a symbiotic relationship with the moss and lichen growing atop its head. This growth provides the creature with a measure of camouflage, and, in return, the goobbue keeps the vegetation moist during the drier seasons with water scooped up in its hands. Though seemingly placid, the goobbue is a relentless predator, snatching up anything that skitters or crawls and shoveling it into its cavernous mouth.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "5",
+        "bottomValue": "5",
+        "leftValue": "2",
+        "id": 11
+    },
+    {
+        "name": "Chocobo",
+        "description": "The domestication of chocobos in Eorzea appears to date back to prehistory, with ancient paintings recently discovered near Ishgard showing tribesfolk using the flightless yellow cloudkin to till the earth, transport grain, and carry warriors into battle. While the overwhelming majority of chocobos seen in Eorzea today are of Coerthan stock, it is rumored that wild breeds of the species-including those which have retained the capacity for flight-still thrive throughout forests nestled in the vastly unexplored valleys of Abalathia's Spine.",
+        "rarity": 1,
+        "topValue": "3",
+        "rightValue": "7",
+        "bottomValue": "2",
+        "leftValue": "1",
+        "id": 12
+    },
+    {
+        "name": "Amalj'aa",
+        "description": "The Amalj'aa are a race of nomadic beastmen who inhabit the grasslands of Paglth'an, where they subsist by hunting the native wildlife. They share a long and bitter history of conflict with the people of Ul'dah. Trained in the arts of war from a tender age, all members of an Amalj'aa clan, old and young, male and female, are skilled warriors. They also boast a fine mastery of metallurgy, and their weapons fetch a tidy sum from those seeking arms of quality.",
+        "rarity": 1,
+        "topValue": "1",
+        "rightValue": "4",
+        "bottomValue": "7",
+        "leftValue": "1",
+        "id": 13
+    },
+    {
+        "name": "Ixal",
+        "description": "This aggressive mountain tribe claim the wind-blasted canyons of Xelphatol as their domain. Though their race has long since lost the capacity for flight, the feathered beastmen are fervently proud of their vestigial wings. The Ixal seek to reestablish their presence in the Black Shroud that they might once again fell trees in worship of their fickle deity-an ambition which places them at odds with the people of Gridania.",
+        "rarity": 1,
+        "topValue": "6",
+        "rightValue": "1",
+        "bottomValue": "3",
+        "leftValue": "4",
+        "id": 14
+    },
+    {
+        "name": "Sylph",
+        "description": "Deep within the northeastern reaches of the Black Shroud live the reclusive sylphs. These diminutive beings resemble children's dolls wrapped in vibrant leaves. The demeanor of the sylphs is comparable to that of an innocent child, but their propensity to employ their magical talents to \"playfully\" torment travelers has all too often been the cause of untold anguish and even tragedy for their hapless victims.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "4",
+        "bottomValue": "5",
+        "leftValue": "4",
+        "id": 15
+    },
+    {
+        "name": "Kobold",
+        "description": "The kobolds are a race of mole-like creatures who have excavated a warren of tunnels under O'Ghomoro, a mountain situated in northern Vylbrand. Believing the ores of the earth to be a gift of the primal Titan, these subterranean beastmen seek to divine their deity's teachings through the arts of alchemy. The peace agreement forged between the kobolds and Limsa Lominsa has served little to quell resurgent hostilities.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "2",
+        "bottomValue": "4",
+        "leftValue": "6",
+        "id": 16
+    },
+    {
+        "name": "Sahagin",
+        "description": "These aquatic beastmen reside in a city at the bottom of the Indigo Deep. They breathe water as well as air, and glide through the depths with graceful ease. The social structure of the Sahagin resembles a pyramid, with a single queen-like figure stationed at its point. On the streets of Limsa Lominsa, to mention the name of Sahagin is to invite dark looks and muttered curses.",
+        "rarity": 1,
+        "topValue": "4",
+        "rightValue": "5",
+        "bottomValue": "3",
+        "leftValue": "3",
+        "id": 17
+    },
+    {
+        "name": "Tataru Taru",
+        "description": "\"Deep in the desert of my heart,â™ª\\n\u0003 A lonely flower blooms...â™ª\\n\u0003 Yearning for the heavens aboveâ™ª\\n\u0003 To quench my thirst for you.â™ª\\n\u0003 Trololololoï½žlololoï½žâ™ª\"",
+        "rarity": 1,
+        "topValue": "7",
+        "rightValue": "2",
+        "bottomValue": "3",
+        "leftValue": "2",
+        "id": 18
+    },
+    {
+        "name": "Moogle",
+        "description": "Do not be fooled by their winsome personae, for moogles are a highly intelligent race of creatures capable of creating utter chaos with the unique brand of elemental magicks at their disposal. For the most part, they are content to keep to themselves, choosing to roam the Twelveswood hidden behind glamours rendering them invisible to all but the most spiritually acute.",
+        "rarity": 1,
+        "topValue": "2",
+        "rightValue": "1",
+        "bottomValue": "3",
+        "leftValue": "7",
+        "id": 19
+    },
+    {
+        "name": "Siren",
+        "description": "Once feared across the five seas, today sirens are but the stuff of legend, due in part to a thorough culling of the creatures some years past by the renowned pirate Mistbeard. Recent sightings of the seductive she-devils, however, once again have sea- and landsmen alike exchanging tales of sirens entrancing entire ship crews with their accursed songs, then feeding on their captives' souls until all that remain are lifeless husks.",
+        "rarity": 2,
+        "topValue": "3",
+        "rightValue": "6",
+        "bottomValue": "7",
+        "leftValue": "2",
+        "id": 20
+    },
+    {
+        "name": "Ultros & Typhon",
+        "description": "A queer duo of heretofore unseen creatures believed, but not yet confirmed, to be voidsent summoned to this realm via an arcane spell discovered by a student of the Thaumaturges' Guild. Upon their arrival in the corporeal plane, both were quick to acclimate to life in Eorzea-Ultros earning a position as headliner for Coliseum-run venationes, and Typhon entering the employ of Godbert Manderville at his high-end gaming establishment, the Gold Saucer.",
+        "rarity": 2,
+        "topValue": "2",
+        "rightValue": "3",
+        "bottomValue": "6",
+        "leftValue": "7",
+        "id": 21
+    },
+    {
+        "name": "Demon Wall",
+        "description": "These frightful guardians are the creations of ancient spellcraft, given life when a chosen wall was inscribed with an arcane pattern of blood. Though their masters have long since perished, these sentinels of demonic visage continue to protect the crumbling ruins to which they are bound-to the surprise and horror of many an unsuspecting adventurer.",
+        "rarity": 2,
+        "topValue": "6",
+        "rightValue": "7",
+        "bottomValue": "2",
+        "leftValue": "3",
+        "id": 22
+    },
+    {
+        "name": "Succubus",
+        "description": "Succubi manifest on the physical plane by forcing their souls into the bodies of deceased women. Once the transition is complete, the resultant creature is said to be both fair and fey to look upon. Still more disconcerting, researchers claim that these voidsent occasionally exhibit the personality traits of their deceased hosts. Succubi occupy the third and fourth rungs of the voidsent hierarchy.",
+        "rarity": 2,
+        "topValue": "7",
+        "rightValue": "3",
+        "bottomValue": "2",
+        "leftValue": "6",
+        "id": 23
+    },
+    {
+        "name": "Chimera",
+        "description": "A nightmarish combination of lion, goat, and dragon, the fell chimera has three heads, a pair of mighty wings, and a cruelly barbed tail. Its origins have been furiously debated, with some insisting the creature a cruel jest of the gods, while others believe it the twisted creation of forbidden sorcery.",
+        "rarity": 2,
+        "topValue": "7",
+        "rightValue": "7",
+        "bottomValue": "2",
+        "leftValue": "2",
+        "id": 24
+    },
+    {
+        "name": "Blue Dragon",
+        "description": "Sharing the blood of Midgardsormr and his progeny, the great wyrms, a blue dragon can live upwards of a thousand summers-a period during which the creature will undergo divers changes to its physical and mental capacities. This independent \"evolution\" of sorts renders each member of the species unique, making it all the more difficult for enemies of the dragons to conceive and establish any manner of standardized battle strategy.",
+        "rarity": 2,
+        "topValue": "2",
+        "rightValue": "2",
+        "bottomValue": "7",
+        "leftValue": "7",
+        "id": 25
+    },
+    {
+        "name": "Scarface Bugaal Ja",
+        "description": "\"Mamool Ja wants <i>freedom</i>-freedom to dance! Why does no one understand!?\"",
+        "rarity": 2,
+        "topValue": "6",
+        "rightValue": "6",
+        "bottomValue": "2",
+        "leftValue": "6",
+        "id": 26
+    },
+    {
+        "name": "Momodi Modi",
+        "description": "\"'Course, I <i>do</i> enjoy hearin' a lady muse on the many manhoods of her acquaintance from time to time...\"",
+        "rarity": 2,
+        "topValue": "7",
+        "rightValue": "5",
+        "bottomValue": "5",
+        "leftValue": "3",
+        "id": 27
+    },
+    {
+        "name": "Baderon Tenfingers",
+        "description": "\"Me da once said, if me ma 'erself was ever t' stand 'twixt 'im and a life o' 'venturin', 'e'd straightways up an' drown th' wench.\"",
+        "rarity": 2,
+        "topValue": "3",
+        "rightValue": "7",
+        "bottomValue": "5",
+        "leftValue": "5",
+        "id": 28
+    },
+    {
+        "name": "Mother Miounne",
+        "description": "\"Great or small, every contribution counts. I trust you will play your part.\"",
+        "rarity": 2,
+        "topValue": "5",
+        "rightValue": "5",
+        "bottomValue": "3",
+        "leftValue": "7",
+        "id": 29
+    },
+    {
+        "name": "Livia sas Junius",
+        "description": "\"Fail to do as my lord commands...and I will spare him the trouble of punishing you.\"",
+        "rarity": 2,
+        "topValue": "3",
+        "rightValue": "7",
+        "bottomValue": "7",
+        "leftValue": "1",
+        "id": 30
+    },
+    {
+        "name": "Rhitahtyn sas Arvina",
+        "description": "\"In the name of Lord van Baelsar, I, Rhitahtyn sas Arvina, do swear to strike you down!\"",
+        "rarity": 2,
+        "topValue": "7",
+        "rightValue": "1",
+        "bottomValue": "3",
+        "leftValue": "7",
+        "id": 31
+    },
+    {
+        "name": "Biggs & Wedge",
+        "description": "\"Biggs-I'm going in! See everyone to safety!\"\\n\u0003\"No! Wedge-don't do it!\"",
+        "rarity": 2,
+        "topValue": "5",
+        "rightValue": "3",
+        "bottomValue": "7",
+        "leftValue": "5",
+        "id": 32
+    },
+    {
+        "name": "Gerolt",
+        "description": "\"Jus' let me make one thing clear: it might be as I'm repairin' kettles to pay for yesterday's mead, but I still got me pride as a master weaponsmith. Ye'll get no less than the finest out of me forge.\"",
+        "rarity": 2,
+        "topValue": "1",
+        "rightValue": "7",
+        "bottomValue": "3",
+        "leftValue": "7",
+        "id": 33
+    },
+    {
+        "name": "Frixio",
+        "description": "\"Mayhap not so fresh...but better than before.\"",
+        "rarity": 2,
+        "topValue": "6",
+        "rightValue": "2",
+        "bottomValue": "6",
+        "leftValue": "6",
+        "id": 34
+    },
+    {
+        "name": "Mutamix Bubblypots",
+        "description": "\"Pshhh... Shkohhh... Uplander seeks knowings of shifty-making, yes? Then uplander should make openears to tongueflaps of Mutamix.\"",
+        "rarity": 2,
+        "topValue": "2",
+        "rightValue": "6",
+        "bottomValue": "6",
+        "leftValue": "6",
+        "id": 35
+    },
+    {
+        "name": "Memeroon",
+        "description": "\"Stop, stop, stop! Memeroon give you shinies! Many, many shinies to repay repayments!\"",
+        "rarity": 2,
+        "topValue": "6",
+        "rightValue": "6",
+        "bottomValue": "6",
+        "leftValue": "2",
+        "id": 36
+    },
+    {
+        "name": "Behemoth",
+        "description": "The first sightings of these heavily muscled beasts in the mountains of Coerthas coincided with the advent of the Seventh Umbral Era. Scholars believe them to be the spawn of the elder primal Bahamut, and have dubbed the creatures \"behemoths.\"Aside from their obvious physical traits, much about behemoth behavior and physiology remains shrouded in mystery.",
+        "rarity": 3,
+        "topValue": "7",
+        "rightValue": "8",
+        "bottomValue": "4",
+        "leftValue": "2",
+        "id": 37
+    },
+    {
+        "name": "Gilgamesh & Enkidu",
+        "description": "\"At long last, we meet again on the battlefield! I daresay Enkidu shall come to enjoy our tussles as much as I.\"",
+        "rarity": 3,
+        "topValue": "8",
+        "rightValue": "3",
+        "bottomValue": "7",
+        "leftValue": "3",
+        "id": 38
+    },
+    {
+        "name": "Ifrit",
+        "description": "Summoned by the Amalj'aa of sunbaked Paglth'an, the Lord of the Inferno-with molten claws that render metal into bubbling pools of molten ooze, and terrible horns that stretch skyward, ever threatening to brand the heavens above-is feared across the realm for a blazing fury almost as unquenchable as his desire to swell the ranks of his tempered armies. ",
+        "rarity": 3,
+        "topValue": "7",
+        "rightValue": "1",
+        "bottomValue": "6",
+        "leftValue": "7",
+        "id": 39
+    },
+    {
+        "name": "Titan",
+        "description": "Summoned by the kobolds of O'Ghomoro, the Lord of Crags maintains an air of forbearance rarely seen in the realm's other primals. However, should he sense the lives of his loyal acolytes are in peril, he will not hesitate to call upon the very mountains themselves to crush the life from those who would bring them harm.",
+        "rarity": 3,
+        "topValue": "1",
+        "rightValue": "7",
+        "bottomValue": "7",
+        "leftValue": "6",
+        "id": 40
+    },
+    {
+        "name": "Garuda",
+        "description": "Summoned by the Ixal tribes of Xelphatol, Garuda harbors the uncanny ability to manipulate the very air which surrounds her. The winds she wields, however, have twisted her heart and broken her mind, rendering the Lady of the Vortex a merciless tyrant with an appetite for destruction that is nigh insatiable.",
+        "rarity": 3,
+        "topValue": "7",
+        "rightValue": "6",
+        "bottomValue": "1",
+        "leftValue": "7",
+        "id": 41
+    },
+    {
+        "name": "Good King Moggle Mog XIII",
+        "description": "Summoned by a rogue sect of Twelveswood moogles believing the regent to be the very figure who led their peoples from their home in the starry welkin down to the realm of Eorzea, Good King Moggle Mog XII is only actually \"good\" to his handful of subjects, doling out healthy dollops of royal justice to all others who would dare stand in his way.",
+        "rarity": 3,
+        "topValue": "7",
+        "rightValue": "6",
+        "bottomValue": "7",
+        "leftValue": "1",
+        "id": 42
+    },
+    {
+        "name": "Raya-O-Senna & A-Ruhn-Senna",
+        "description": "\"My name may be unfamiliar to you, but doubtless you know of my sister. That would be Kan\u0003E\u0003Senna, Elder Seedseer of Gridania and supreme commander of the Order of the Twin Adder. Together, we are known as the three Seedseers-my sister, myself, and our younger brother, A\u0003Ruhn\u0003Senna.\"",
+        "rarity": 3,
+        "topValue": "5",
+        "rightValue": "6",
+        "bottomValue": "6",
+        "leftValue": "6",
+        "id": 43
+    },
+    {
+        "name": "Godbert Manderville",
+        "description": "\"But you were not drawn here by some coincidence, were you? No, you came in search of me, Godbert! Why else would you gyrate your hips in such a gentlemanly fashion, if not that?\"",
+        "rarity": 3,
+        "topValue": "6",
+        "rightValue": "6",
+        "bottomValue": "5",
+        "leftValue": "6",
+        "id": 44
+    },
+    {
+        "name": "Thancred",
+        "description": "\"I've been something of a liability of late, I know. 'Tis high time I set about making amends.\"",
+        "rarity": 3,
+        "topValue": "2",
+        "rightValue": "3",
+        "bottomValue": "8",
+        "leftValue": "7",
+        "id": 45
+    },
+    {
+        "name": "Nero tol Scaeva",
+        "description": "\"Garlond... Soon you will be made to know the true power of magitek.\"",
+        "rarity": 3,
+        "topValue": "4",
+        "rightValue": "1",
+        "bottomValue": "8",
+        "leftValue": "7",
+        "id": 46
+    },
+    {
+        "name": "Papalymo & Yda",
+        "description": "\"The great beyond! I do believe we're dead, Papalymo!\"\\n\u0003\"Oh, Rhalgr take you and your great beyond!\"",
+        "rarity": 3,
+        "topValue": "3",
+        "rightValue": "7",
+        "bottomValue": "8",
+        "leftValue": "2",
+        "id": 47
+    },
+    {
+        "name": "Y'shtola",
+        "description": "\"The seas continue to rise while the lesser moon continues to fall, and ilm by ilm, the world becomes ever more unlike itself.\"",
+        "rarity": 3,
+        "topValue": "7",
+        "rightValue": "8",
+        "bottomValue": "1",
+        "leftValue": "4",
+        "id": 48
+    },
+    {
+        "name": "Urianger",
+        "description": "\"Truth interpreted is truth transformed. Today's heroes may yet become tomorrow's gods...or something else.\"",
+        "rarity": 3,
+        "topValue": "8",
+        "rightValue": "1",
+        "bottomValue": "4",
+        "leftValue": "7",
+        "id": 49
+    },
+    {
+        "name": "Ultima Weapon",
+        "description": "A relic of the Third Astral Era, the Ultima Weapon is a feat of Allagan technology-the same technology which saw the reach of the Allagan Empire extend to the four corners of Hydaelyn. Upon rediscovery of the mechanical juggernaut buried deep beneath the lands just beyond Ala Mhigo, the XIVth Legion of the Imperial Garlean Army refitted it to serve as a countermeasure against the ever-growing primal threat.",
+        "rarity": 4,
+        "topValue": "7",
+        "rightValue": "8",
+        "bottomValue": "9",
+        "leftValue": "1",
+        "id": 50
+    },
+    {
+        "name": "Odin",
+        "description": "While no one knows exactly when or by whom the Dark Divinity was summoned, the elder primal roams the Twelveswood astride his loyal warhorse Sleipnir seeking a bloody reckoning for misdeeds lost but unforgotten.",
+        "rarity": 4,
+        "topValue": "8",
+        "rightValue": "8",
+        "bottomValue": "1",
+        "leftValue": "8",
+        "id": 51
+    },
+    {
+        "name": "Ramuh",
+        "description": "Worshipped by the sylphs of the Twelveswood, the Lord of Levin is a thunderous entity with boundless knowledge of ages past. He is stern yet just, but his judgment is final, and those found guilty of mortal sin will be met with mighty bolts of white-hot lightning.",
+        "rarity": 4,
+        "topValue": "8",
+        "rightValue": "1",
+        "bottomValue": "8",
+        "leftValue": "8",
+        "id": 52
+    },
+    {
+        "name": "Leviathan",
+        "description": "Summoned by the Sahagin tribes of the Indigo Deep, the Lord of the Whorl ever lurks beneath the sea's surface, seeking ships to swallow and sailors to join his ranks of drowned minions. Fishers and saltwives throughout history have believed the tidal waves which oft flood their coastal villages are created by the thrashing tail of an angered Leviathan, and have for centuries offered sacrifices to the sea in hopes of soothing the serpent.",
+        "rarity": 4,
+        "topValue": "8",
+        "rightValue": "8",
+        "bottomValue": "8",
+        "leftValue": "1",
+        "id": 53
+    },
+    {
+        "name": "Shiva",
+        "description": "The <i>Enchiridion</i>, holy scripture for the Ishgardian faith, brands Shiva the Original Heretic-the first to succumb to the temptation of the dragons. Her followers, however, venerate her as a saint who tried, yet failed, to bring together man and dragon through selfless sacrifice.",
+        "rarity": 4,
+        "topValue": "1",
+        "rightValue": "8",
+        "bottomValue": "8",
+        "leftValue": "8",
+        "id": 54
+    },
+    {
+        "name": "Minfilia",
+        "description": "\"No doubt you're ripe to burst with questions, but have patience-all will be revealed in time.\"",
+        "rarity": 4,
+        "topValue": "9",
+        "rightValue": "8",
+        "bottomValue": "3",
+        "leftValue": "5",
+        "id": 55
+    },
+    {
+        "name": "Lahabrea",
+        "description": "\"For the end of your tale is but the beginning of another... The tale of the Crystal's demise!\"",
+        "rarity": 4,
+        "topValue": "4",
+        "rightValue": "9",
+        "bottomValue": "4",
+        "leftValue": "8",
+        "id": 56
+    },
+    {
+        "name": "Cid Garlond",
+        "description": "\"Just how long have I worn these damn goggles?\"",
+        "rarity": 4,
+        "topValue": "5",
+        "rightValue": "9",
+        "bottomValue": "9",
+        "leftValue": "2",
+        "id": 57
+    },
+    {
+        "name": "Alphinaud & Alisaie",
+        "description": "\"Our paths may differ, but our destination is the same. In time, I daresay we will see eye to eye.\"",
+        "rarity": 4,
+        "topValue": "9",
+        "rightValue": "3",
+        "bottomValue": "3",
+        "leftValue": "9",
+        "id": 58
+    },
+    {
+        "name": "Louisoix Leveilleur",
+        "description": "\"Silence, chattering raven. Your wretched wings are broken, and you shall soar no more.\"",
+        "rarity": 4,
+        "topValue": "9",
+        "rightValue": "4",
+        "bottomValue": "9",
+        "leftValue": "3",
+        "id": 59
+    },
+    {
+        "name": "Bahamut",
+        "description": "Forgotten for millennia, the elder primal Bahamut was finally freed from his celestial prison Dalamud in the 1572nd year of the Sixth Astral Era through the machinations of the Garlean legatus Nael van Darnus. Unfettered at last, the dreadwyrm unleashed an endless rain of fire on the land, the destruction he wrought ushering in a dark age of death and suffering.",
+        "rarity": 5,
+        "topValue": "9",
+        "rightValue": "5",
+        "bottomValue": "9",
+        "leftValue": "6",
+        "id": 60
+    },
+    {
+        "name": "Hildibrand & Nashu Mhakaracca",
+        "description": "\"I swear to you, here and now: I, Hildibrand, agent of enquiry, inspector extraordinaire, shall scour all creation-from the deepest pit of the seven hells to the very pinnacle of the heavens-for your Pure Heart!\"",
+        "rarity": 5,
+        "topValue": "1",
+        "rightValue": "8",
+        "bottomValue": "A",
+        "leftValue": "8",
+        "id": 61
+    },
+    {
+        "name": "Nanamo Ul Namo",
+        "description": "\"The true wealth of Ul'dah lies in the health, happiness, and hopes of her people.\"",
+        "rarity": 5,
+        "topValue": "A",
+        "rightValue": "6",
+        "bottomValue": "4",
+        "leftValue": "8",
+        "id": 62
+    },
+    {
+        "name": "Gaius van Baelsar",
+        "description": "\"Unworthy is the ruler whose subjects seek the solace of false gods.\"",
+        "rarity": 5,
+        "topValue": "4",
+        "rightValue": "A",
+        "bottomValue": "5",
+        "leftValue": "9",
+        "id": 63
+    },
+    {
+        "name": "Merlwyb Bloefhiswyn",
+        "description": "\"Victory is a far-flung shore. Mark the skies, abide the tides, trust to your crewâ€”and she will be yours.\"",
+        "rarity": 5,
+        "topValue": "5",
+        "rightValue": "9",
+        "bottomValue": "A",
+        "leftValue": "3",
+        "id": 64
+    },
+    {
+        "name": "Kan-E-Senna",
+        "description": "\"Eorzea's children are as trees in a groveâ€”bending to the wind like the willow, or bearing it like the oak. Yet live how we might, the wind shall blow.\"",
+        "rarity": 5,
+        "topValue": "9",
+        "rightValue": "A",
+        "bottomValue": "1",
+        "leftValue": "7",
+        "id": 65
+    },
+    {
+        "name": "Raubahn Aldynn",
+        "description": "\"Bwahaha! The battlefield is the best and worst of places. Where else can a man's enemy become his mentor, or an ally his enemy?\"",
+        "rarity": 5,
+        "topValue": "6",
+        "rightValue": "2",
+        "bottomValue": "9",
+        "leftValue": "A",
+        "id": 66
+    },
+    {
+        "name": "Warrior of Light",
+        "description": "\"The light shall never fade!\"",
+        "rarity": 5,
+        "topValue": "A",
+        "rightValue": "2",
+        "bottomValue": "5",
+        "leftValue": "A",
+        "id": 67
+    },
+    {
+        "name": "Firion",
+        "description": "\"My dream...is a world filled with wild roses.\"",
+        "rarity": 5,
+        "topValue": "A",
+        "rightValue": "5",
+        "bottomValue": "A",
+        "leftValue": "1",
+        "id": 68
+    },
+    {
+        "name": "Onion Knight",
+        "description": "\"Being small has its advantages.\"",
+        "rarity": 5,
+        "topValue": "8",
+        "rightValue": "2",
+        "bottomValue": "8",
+        "leftValue": "A",
+        "id": 69
+    },
+    {
+        "name": "Cecil Harvey",
+        "description": "\"I told you before, you've drawn us into nothing. This fight is as much ours as yours.\"",
+        "rarity": 5,
+        "topValue": "4",
+        "rightValue": "A",
+        "bottomValue": "4",
+        "leftValue": "A",
+        "id": 70
+    },
+    {
+        "name": "Bartz Klauser",
+        "description": "\"It was my dad's last request, you know, to go out and travel the world... And this time, it feels like\u0003 like the wind is calling me.\"",
+        "rarity": 5,
+        "topValue": "4",
+        "rightValue": "4",
+        "bottomValue": "A",
+        "leftValue": "A",
+        "id": 71
+    },
+    {
+        "name": "Terra Branford",
+        "description": "\"Don't worry. I'm sure a peaceful future is right around the corner!\"",
+        "rarity": 5,
+        "topValue": "A",
+        "rightValue": "A",
+        "bottomValue": "2",
+        "leftValue": "5",
+        "id": 72
+    },
+    {
+        "name": "Cloud Strife",
+        "description": "\"I can't remain trapped in an illusion anymore.\"",
+        "rarity": 5,
+        "topValue": "9",
+        "rightValue": "3",
+        "bottomValue": "9",
+        "leftValue": "8",
+        "id": 73
+    },
+    {
+        "name": "Squall Leonhart",
+        "description": "\"Don't talk about me in the past tense!\"",
+        "rarity": 5,
+        "topValue": "6",
+        "rightValue": "A",
+        "bottomValue": "A",
+        "leftValue": "1",
+        "id": 74
+    },
+    {
+        "name": "Zidane Tribal",
+        "description": "\"Do I need a reason to help someone?\"",
+        "rarity": 5,
+        "topValue": "5",
+        "rightValue": "A",
+        "bottomValue": "6",
+        "leftValue": "8",
+        "id": 75
+    },
+    {
+        "name": "Tidus",
+        "description": "\"This is our story! Now let's see this thing through together!\"",
+        "rarity": 5,
+        "topValue": "A",
+        "rightValue": "7",
+        "bottomValue": "1",
+        "leftValue": "9",
+        "id": 76
+    },
+    {
+        "name": "Shantotto",
+        "description": "\"That's quite enough! Time to play rough.\"",
+        "rarity": 5,
+        "topValue": "4",
+        "rightValue": "9",
+        "bottomValue": "7",
+        "leftValue": "9",
+        "id": 77
+    },
+    {
+        "name": "Vaan",
+        "description": "\"Who said anything about strong? You'll make it. You got good friends.\"",
+        "rarity": 5,
+        "topValue": "1",
+        "rightValue": "7",
+        "bottomValue": "A",
+        "leftValue": "9",
+        "id": 78
+    },
+    {
+        "name": "Lightning",
+        "description": "\"It's not a question of can or can't. There are some things in life you just do.\"",
+        "rarity": 5,
+        "topValue": "9",
+        "rightValue": "1",
+        "bottomValue": "7",
+        "leftValue": "A",
+        "id": 79
+    }
+]
