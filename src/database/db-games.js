@@ -27,7 +27,7 @@
             }),
         Game = mongoose.model('Game', GameSchema);
 
-    // Insert a new game - I ♡ JavaSript... NOT!
+    // Insert a new game
     exports.insert = function (player_1, player_2) {
         return new Promise(function (resolve, reject) {
             var game = {

@@ -5,7 +5,7 @@
     var jwt = require('./auth/auth-jwt'),
         db_users = require('../database/db-users');
 
-    // Main router where all authentication routes are called. This is done so the project code is cleaner and more maintainable.
+    // Main router where all user routes are called. This is done so the project code is cleaner and more maintainable.
     module.exports = function (server) {
 
         // Route to get the user itself

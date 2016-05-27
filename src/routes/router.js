@@ -13,6 +13,9 @@
         // Require the routes related to users
         require('./user')(server);
 
+        // Require the routes related to users
+        require('./game')(server);
+
         // Require the socket router
         require('./sockets/socket-router')(io);
 
