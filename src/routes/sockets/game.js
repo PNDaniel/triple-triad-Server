@@ -43,19 +43,6 @@
                     });
             });
 
-            socket.on('status', function (req) {
-                jwt.verify(session)
-                    .then(function (user) {
-                        db_users.update_status(user.id, req.status)
-                            .then(function () {
-                                db_users.select_status('online')
-                                    .then(function (users) {
-                                        io.emit('users', users);
-                                    });
-                            });
-                    });
-            });
-
             socket.on('msg', function (req) {
                 jwt.verify(session)
                     .then(function (user) {
@@ -68,6 +55,53 @@
                                 io.to(game._id).emit('chat', {
                                     game: game
                                 });
+                            });
+                    });
+            });
+
+            socket.on('status', function (req) {
+                jwt.verify(session)
+                    .then(function (user) {
+                        db_users.update_status(user.id, req.status)
+                            .then(function () {
+                                db_users.select_status('online')
+                                    .then(function (online_users) {
+                                        db_users.select_status('ingame')
+                                            .then(function (ingame_users) {
+                                                io.emit('users', online_users.concat(ingame_users));
+                                            });
+                                    });
+                                if (req.status !== 'ingame') {
+                                    db_games.select_ongoing_with_user(user.id)
+                                        .then(function (games) {
+                                            for (var i = 0; i < games.length; i++) {
+                                                io.to(games[i]._id).emit('disconnect', {
+                                                    room: games[i]._id
+                                                });
+                                                db_games.remove(games[i]._id);
+                                            }
+                                        });
+                                }
+                            });
+                    });
+            });
+
+            socket.on('disconnect', function (req) {
+                jwt.verify(session)
+                    .then(function (user) {
+                        db_games.remove(req.room)
+                            .then(function () {
+                                io.to(req.room).emit('disconnect', {
+                                    room: req.room
+                                });
+                                //socket.leave(req.room);
+                                console.log('O primeiro gajo saiu.');
+
+                            })
+                            .catch(function (err) {
+                                console.log(err);
+                                //socket.leave(req.room);
+                                console.log('O segundo gajo saiu.');
                             });
                     });
             });

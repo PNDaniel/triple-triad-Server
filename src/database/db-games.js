@@ -20,19 +20,26 @@
             },
             date: {
                 type: Date,
-                expires: '24h'
+                required: true
+            },
+            ongoing: {
+                type: Boolean,
+                required: true,
+                default: true
             },
             chat: [
                 {
                     author: {
-                        type: ObjectId
+                        type: ObjectId,
+                        required: true
                     },
                     msg: {
-                        type: String
+                        type: String,
+                        required: true
                     },
                     date: {
                         type: Date,
-                        expires: '24h'
+                        required: true
                     }
                 }
             ]
@@ -103,6 +110,39 @@
                         resolve(game);
                     }
                 });
+        });
+    };
+
+    exports.remove = function (id) {
+        return new Promise(function (resolve, reject) {
+            Game.findByIdAndRemove(id, function (err) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            });
+        });
+    };
+
+    exports.select_ongoing_with_user = function (id) {
+        return new Promise(function (resolve, reject) {
+            var query = Game.where({
+                ongoing: true,
+                $or: [
+                    { creator: id },
+                    { invited: id }
+                ]
+            });
+            query.find(function (err, games) {
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+                if (games) {
+                    resolve(games);
+                }
+            });
         });
     };
 

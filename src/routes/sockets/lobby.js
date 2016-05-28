@@ -25,29 +25,6 @@
                     socket.join(user.id);
                 });
 
-            socket.on('disconnect', function (req) {
-                jwt.verify(session)
-                    .then(function (user) {
-                        db_users.update_status(user.id, 'offline');
-                    });
-            });
-
-            socket.on('status', function (req) {
-                jwt.verify(session)
-                    .then(function (user) {
-                        db_users.update_status(user.id, req.status)
-                            .then(function () {
-                                db_users.select_status('online')
-                                    .then(function (online_users) {
-                                        db_users.select_status('ingame')
-                                            .then(function (ingame_users) {
-                                                io.emit('users', online_users.concat(ingame_users));
-                                            });
-                                    });
-                            });
-                    });
-            });
-
             socket.on('invite', function (req) {
                 jwt.verify(session)
                     .then(function (user) {

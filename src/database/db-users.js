@@ -30,6 +30,10 @@
             },
             twitter_id: {
                 type: Number
+            },
+            games_won: {
+                type: Number,
+                default: 0
             }
         }, {
                 collection: 'users'
