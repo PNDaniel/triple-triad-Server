@@ -25,6 +25,24 @@
                     socket.join(user.id);
                 });
 
+            socket.on('game', function (req) {
+                jwt.verify(session)
+                    .then(function (user) {
+                        db_games.select_id(req.game)
+                            .then(function (game) {
+                                if (JSON.stringify(game.creator) === JSON.stringify(user.id) ||
+                                    JSON.stringify(game.invited) === JSON.stringify(user.id)) {
+                                    // Subscribe user to this game
+                                    socket.join(game._id);
+                                    // Send chat messages
+                                    io.to(game._id).emit('chat', {
+                                        game: game
+                                    });
+                                }
+                            });
+                    });
+            });
+
             socket.on('status', function (req) {
                 jwt.verify(session)
                     .then(function (user) {
@@ -34,6 +52,22 @@
                                     .then(function (users) {
                                         io.emit('users', users);
                                     });
+                            });
+                    });
+            });
+
+            socket.on('msg', function (req) {
+                jwt.verify(session)
+                    .then(function (user) {
+                        var chat = {
+                            author: user.id,
+                            msg: req.msg
+                        };
+                        db_games.update_chat(req.room, chat)
+                            .then(function (game) {
+                                io.to(game._id).emit('chat', {
+                                    game: game
+                                });
                             });
                     });
             });

@@ -21,7 +21,21 @@
             date: {
                 type: Date,
                 expires: '24h'
-            }
+            },
+            chat: [
+                {
+                    author: {
+                        type: ObjectId
+                    },
+                    msg: {
+                        type: String
+                    },
+                    date: {
+                        type: Date,
+                        expires: '24h'
+                    }
+                }
+            ]
         }, {
                 collection: 'games'
             }),
@@ -64,6 +78,31 @@
                     reject(err);
                 }
             });
+        });
+    };
+
+    exports.update_chat = function (id, chat) {
+        return new Promise(function (resolve, reject) {
+            Game.findByIdAndUpdate(id, {
+                $push: {
+                    "chat": {
+                        author: chat.author,
+                        msg: chat.msg,
+                        date: new Date()
+                    }
+                }
+            },
+                {
+                    safe: true,
+                    upsert: true,
+                    new: true
+                }, function (err, game) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(game);
+                    }
+                });
         });
     };
 
