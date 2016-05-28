@@ -42,7 +42,25 @@
                         required: true
                     }
                 }
-            ]
+            ],
+            cards: {
+                creator: [{
+                    id: Number,
+                    name: String,
+                    topValue: Number,
+                    rightValue: Number,
+                    bottomValue: Number,
+                    leftValue: Number
+                }],
+                invited: [{
+                    id: Number,
+                    name: String,
+                    topValue: Number,
+                    rightValue: Number,
+                    bottomValue: Number,
+                    leftValue: Number
+                }]
+            }
         }, {
                 collection: 'games'
             }),

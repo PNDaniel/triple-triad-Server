@@ -39,6 +39,10 @@
                                         game: game
                                     });
                                 }
+                                if (game.cards.creator.length === 0 || game.cards.invited.length === 0) {
+                                    console.log('need cards');
+                                    // Asign cards to game
+                                }
                             });
                     });
             });
