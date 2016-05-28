@@ -38,8 +38,11 @@
                         db_users.update_status(user.id, req.status)
                             .then(function () {
                                 db_users.select_status('online')
-                                    .then(function (users) {
-                                        io.emit('users', users);
+                                    .then(function (online_users) {
+                                        db_users.select_status('ingame')
+                                            .then(function (ingame_users) {
+                                                io.emit('users', online_users.concat(ingame_users));
+                                            });
                                     });
                             });
                     });
@@ -71,6 +74,20 @@
                                     game: game
                                 });
                             });
+                    });
+            });
+
+            socket.on('decline', function (req) {
+                jwt.verify(session)
+                    .then(function (user) {
+                        // Notify game creator
+                        io.to(user.id).emit('decline', {
+                            user: req.id
+                        });
+                        // Notify invited player
+                        io.to(req.id).emit('decline', {
+                            user: user.id
+                        });
                     });
             });
 

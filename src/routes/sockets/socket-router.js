@@ -8,6 +8,9 @@
         // Require the declaration of lobby socket connections. 
         require('./lobby')(io);
 
+        // Require the declaration of game socket connections. 
+        require('./game')(io);
+
     };
 
 } ());
