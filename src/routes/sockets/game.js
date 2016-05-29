@@ -113,6 +113,18 @@
                     });
             });
 
+            socket.on('getGame', function (req) {
+                jwt.verify(session)
+                    .then(function (user) {
+                        db_games.select_id(req.game)
+                            .then(function (game) {
+                                io.to(req.game).emit('game', {
+                                    game: game
+                                });
+                            });
+                    });
+            });
+
             socket.on('msg', function (req) {
                 jwt.verify(session)
                     .then(function (user) {
