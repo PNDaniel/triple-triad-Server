@@ -252,4 +252,26 @@
         });
     };
 
+    exports.select_ongoing = function () {
+        return new Promise(function (resolve, reject) {
+            var query = Game.where({
+                ongoing: true
+            });
+            query.find(function (err, games) {
+                // If found a user or user doesn't exist
+                if (games) {
+                    resolve(games);
+                } else {
+                    reject({
+                        error: 'No games found.'
+                    });
+                }
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+            });
+        });
+    };
+
 } ());

@@ -52,6 +52,19 @@
             res.status(200).json(random_cards.slice(0, 5));
         });
 
+        server.get('/api/games', function (req, res) {
+            db_games.select_ongoing()
+                .then(function (games) {
+                    console.log(games);
+                    res.status(200).json({
+                        games: games.length
+                    });
+                })
+                .catch(function (err) {
+                    res.status(500).json(err);
+                })
+        });
+
     };
 
 } ());
