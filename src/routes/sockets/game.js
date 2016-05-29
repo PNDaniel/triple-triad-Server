@@ -46,7 +46,7 @@
                                     random_cards.sort(function () {
                                         return 0.5 - Math.random()
                                     });
-                                    db_games.update_cards(game._id, random_cards)
+                                    db_games.update_random_cards(game._id, random_cards)
                                         .then(function (game) {
                                             console.log('Enviando jogo com cartas.');
                                             io.to(game._id).emit('game', {
@@ -55,6 +55,58 @@
                                         });
                                 }
                             });
+                    });
+            });
+
+            function exists(obj, list) {
+                for (var i = 0; i < list.length; i++) {
+                    if (list[i].id === obj.id) {
+                        return true;
+                    }
+                }
+                return false;
+            };
+
+            socket.on('board', function (req) {
+                var board = [];
+                for (var i = 0; i < req.game.board.length; i++) {
+                    if (req.game.board[i] !== null && req.game.board[i].id !== null) {
+                        board[i] = {
+                            id: req.game.board[i].id,
+                            creator: req.game.board[i].creator || exists(req.game.board[i], req.game.cards.creator),
+                            invited: req.game.board[i].invited || exists(req.game.board[i], req.game.cards.invited)
+                        };
+                    } else {
+                        board[i] = {};
+                    }
+                }
+                // Remove used cards from creator hand
+                for (var i = 0; i < req.game.cards.creator.length; i++) {
+                    for (var j = 0; j < board.length; j++) {
+                        if (req.game.cards.creator[i].id === board[j].id) {
+                            req.game.cards.creator.splice(i, 1);
+                        }
+                    }
+                }
+                // Remove used cards from invited hand
+                for (var i = 0; i < req.game.cards.invited.length; i++) {
+                    for (var j = 0; j < board.length; j++) {
+                        if (req.game.cards.invited[i].id === board[j].id) {
+                            req.game.cards.invited.splice(i, 1);
+                        }
+                    }
+                }
+                db_games.update_board(req.game._id, board)
+                    .then(function (game) {
+                        db_games.update_cards(game._id, req.game.cards.creator, req.game.cards.invited)
+                            .then(function (game) {
+                                io.to(game._id).emit('game', {
+                                    game: game
+                                });
+                            });
+                    })
+                    .catch(function (err) {
+                        console.log(err);
                     });
             });
 

@@ -60,6 +60,17 @@
                     bottomValue: Number,
                     leftValue: Number
                 }]
+            },
+            board: [
+                {
+                    id: Number,
+                    creator: Boolean,
+                    invited: Boolean
+                }
+            ],
+            creator_playing: {
+                type: Boolean,
+                default: true
             }
         }, {
                 collection: 'games'
@@ -164,7 +175,7 @@
         });
     };
 
-    exports.update_cards = function (id, cards) {
+    exports.update_random_cards = function (id, cards) {
         return new Promise(function (resolve, reject) {
             Game.findByIdAndUpdate(id, {
                 "cards": {
@@ -181,6 +192,61 @@
                         reject(err);
                     } else {
                         resolve(game);
+                    }
+                });
+        });
+    };
+
+    exports.update_cards = function (id, creator, invited) {
+        return new Promise(function (resolve, reject) {
+            Game.findByIdAndUpdate(id, {
+                "cards": {
+                    creator: creator,
+                    invited: invited
+                }
+            },
+                {
+                    safe: true,
+                    upsert: true,
+                    new: true
+                }, function (err, game) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(game);
+                    }
+                });
+        });
+    };
+
+    exports.update_board = function (id, board) {
+        return new Promise(function (resolve, reject) {
+            Game.findByIdAndUpdate(id, {
+                $set: {
+                    "board": board
+                }
+            },
+                {
+                    safe: true,
+                    upsert: true,
+                    new: true
+                }, function (err, game) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        Game.findByIdAndUpdate(id, {
+                            creator_playing: !game.creator_playing
+                        }, {
+                                safe: true,
+                                upsert: true,
+                                new: true
+                            }, function (err, game) {
+                                if (err) {
+                                    reject(err);
+                                } else {
+                                    resolve(game);
+                                }
+                            })
                     }
                 });
         });
