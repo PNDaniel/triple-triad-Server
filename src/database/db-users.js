@@ -311,4 +311,23 @@
         });
     };
 
+    exports.update_wins = function (id, wins) {
+        return new Promise(function (resolve, reject) {
+            User.findByIdAndUpdate(id, {
+                "games_won": wins
+            },
+                {
+                    safe: true,
+                    upsert: true,
+                    new: true
+                }, function (err, user) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(user);
+                    }
+                });
+        });
+    };
+
 } ());

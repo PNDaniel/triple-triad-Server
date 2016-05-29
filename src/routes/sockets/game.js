@@ -340,17 +340,6 @@
                             }
                         }
 
-                        // Verificar se o tabuleiro está cheio
-                        var k;
-                        for (k = 0; i < board.length; i++) {
-                            if (board[k] === undefined || board[k].id === undefined) {
-                                break;
-                            }
-                        }
-                        if (k === board.length) {
-                            console.log('FINAL DE JOGO!');
-                        }
-
                         // Remove used cards from creator hand
                         for (var i = 0; i < req.game.cards.creator.length; i++) {
                             for (var j = 0; j < board.length; j++) {
@@ -376,6 +365,51 @@
                                         io.to(game._id).emit('game', {
                                             game: game
                                         });
+                                        // Verificar se o tabuleiro está cheio
+                                        var sumCreator = 0, sumInvited = 0;
+                                        for (var k = 0; k < game.board.length; k++) {
+                                            if (game.board[k].creator) {
+                                                sumCreator++;
+                                            }
+                                            if (game.board[k].invited) {
+                                                sumInvited++;
+                                            }
+                                        }
+                                        if ((sumCreator + sumInvited) === game.board.length) {
+                                            db_games.select_id(game._id)
+                                                .then(function (game) {
+                                                    if (game.ongoing) {
+                                                        console.log('END GAME ID: ' + game._id);
+                                                        db_games.update_ongoing(game._id, false)
+                                                            .then(function (game) {
+                                                                // Ver quem tem mais cartas
+                                                                if (sumCreator > sumInvited) {
+                                                                    db_users.select_id(game.creator)
+                                                                        .then(function (user) {
+                                                                            console.log('User ' + user.name + ' now has won ' + (user.games_won + 1));
+                                                                            db_users.update_wins(user._id, user.games_won + 1)
+                                                                                .then(function (user) {
+                                                                                    io.to(game._id).emit('endGame', {
+                                                                                        winner: user
+                                                                                    });
+                                                                                });
+                                                                        });
+                                                                } else if (sumInvited > sumCreator) {
+                                                                    db_users.select_id(game.invited)
+                                                                        .then(function (user) {
+                                                                            console.log('User ' + user.name + ' now has won ' + (user.games_won + 1));
+                                                                            db_users.update_wins(user._id, user.games_won + 1)
+                                                                                .then(function (user) {
+                                                                                    io.to(game._id).emit('endGame', {
+                                                                                        winner: user
+                                                                                    });
+                                                                                });
+                                                                        });
+                                                                }
+                                                            });
+                                                    }
+                                                });
+                                        }
                                     });
                             })
                             .catch(function (err) {

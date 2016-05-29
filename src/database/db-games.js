@@ -219,6 +219,25 @@
         });
     };
 
+    exports.update_ongoing = function (id, ongoing) {
+        return new Promise(function (resolve, reject) {
+            Game.findByIdAndUpdate(id, {
+                "ongoing": ongoing
+            },
+                {
+                    safe: true,
+                    upsert: true,
+                    new: true
+                }, function (err, game) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(game);
+                    }
+                });
+        });
+    };
+
     exports.update_board = function (id, board) {
         return new Promise(function (resolve, reject) {
             Game.findByIdAndUpdate(id, {
