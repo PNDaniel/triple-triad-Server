@@ -36,6 +36,16 @@
                 });
         });
 
+        server.get('/api/users', function (req, res) {
+            db_users.select_all()
+                .then(function (users) {
+                    res.status(200).json(users);
+                })
+                .catch(function (err) {
+                    res.status(404).json(err);
+                });
+        });
+
     };
 
 } ());

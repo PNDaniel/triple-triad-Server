@@ -330,4 +330,27 @@
         });
     };
 
+    exports.select_all = function () {
+        return new Promise(function (resolve, reject) {
+            var query = User.where({});
+            query.find(function (err, users) {
+                // If found a user or user doesn't exist
+                if (users) {
+                    for (var i = 0; i < users.length; i++) {
+                        users[i].password = undefined;
+                    }
+                    resolve(users);
+                } else {
+                    reject({
+                        error: 'No users found.'
+                    });
+                }
+                // If found an error in the query
+                if (err) {
+                    reject(err);
+                }
+            });
+        });
+    };
+
 } ());
