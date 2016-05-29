@@ -116,6 +116,7 @@
                         if (newCardIndex === 0) {
                             // direita
                             if (board[1] !== undefined && board[1].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].rightValue > cards[board[1].id].leftValue) {
                                     board[1].creator = newCard.creator;
                                     board[1].invited = newCard.invited;
@@ -123,6 +124,7 @@
                             }
                             // baixo
                             if (board[3] !== undefined && board[3].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].bottomValue > cards[board[3].id].topValue) {
                                     board[3].creator = newCard.creator;
                                     board[3].invited = newCard.invited;
@@ -131,6 +133,7 @@
                         } else if (newCardIndex === 1) {
                             // direita
                             if (board[2] !== undefined && board[2].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].rightValue > cards[board[2].id].leftValue) {
                                     board[2].creator = newCard.creator;
                                     board[2].invited = newCard.invited;
@@ -138,6 +141,7 @@
                             }
                             // baixo
                             if (board[4] !== undefined && board[4].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].bottomValue > cards[board[4].id].topValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
@@ -145,6 +149,7 @@
                             }
                             // esquerda
                             if (board[0] !== undefined && board[0].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].leftValue > cards[board[0].id].rightValue) {
                                     board[0].creator = newCard.creator;
                                     board[0].invited = newCard.invited;
@@ -153,6 +158,7 @@
                         } else if (newCardIndex === 2) {
                             // baixo
                             if (board[5] !== undefined && board[5].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].bottomValue > cards[board[5].id].topValue) {
                                     board[5].creator = newCard.creator;
                                     board[5].invited = newCard.invited;
@@ -160,6 +166,7 @@
                             }
                             // esquerda
                             if (board[1] !== undefined && board[1].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].leftValue > cards[board[1].id].rightValue) {
                                     board[1].creator = newCard.creator;
                                     board[1].invited = newCard.invited;
@@ -168,6 +175,7 @@
                         } else if (newCardIndex === 3) {
                             // cima
                             if (board[0] !== undefined && board[0].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].topValue > cards[board[0].id].bottomValue) {
                                     board[0].creator = newCard.creator;
                                     board[0].invited = newCard.invited;
@@ -175,6 +183,7 @@
                             }
                             // direita
                             if (board[4] !== undefined && board[4].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].rightValue > cards[board[4].id].leftValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
@@ -182,6 +191,7 @@
                             }
                             // baixo
                             if (board[6] !== undefined && board[6].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].bottomValue > cards[board[6].id].topValue) {
                                     board[6].creator = newCard.creator;
                                     board[6].invited = newCard.invited;
@@ -190,6 +200,7 @@
                         } else if (newCardIndex === 4) {
                             // cima
                             if (board[1] !== undefined && board[1].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].topValue > cards[board[1].id].bottomValue) {
                                     board[1].creator = newCard.creator;
                                     board[1].invited = newCard.invited;
@@ -197,6 +208,7 @@
                             }
                             // direita
                             if (board[5] !== undefined && board[5].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].rightValue > cards[board[5].id].leftValue) {
                                     board[5].creator = newCard.creator;
                                     board[5].invited = newCard.invited;
@@ -204,6 +216,7 @@
                             }
                             // baixo
                             if (board[7] !== undefined && board[7].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].bottomValue > cards[board[7].id].topValue) {
                                     board[7].creator = newCard.creator;
                                     board[7].invited = newCard.invited;
@@ -211,6 +224,7 @@
                             }
                             // esquerda
                             if (board[3] !== undefined && board[3].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].leftValue > cards[board[3].id].rightValue) {
                                     board[3].creator = newCard.creator;
                                     board[3].invited = newCard.invited;
@@ -219,6 +233,7 @@
                         } else if (newCardIndex === 5) {
                             // cima
                             if (board[2] !== undefined && board[2].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].topValue > cards[board[2].id].bottomValue) {
                                     board[2].creator = newCard.creator;
                                     board[2].invited = newCard.invited;
@@ -226,6 +241,7 @@
                             }
                             // baixo
                             if (board[8] !== undefined && board[8].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].bottomValue > cards[board[8].id].topValue) {
                                     board[8].creator = newCard.creator;
                                     board[8].invited = newCard.invited;
@@ -233,6 +249,7 @@
                             }
                             // esquerda
                             if (board[4] !== undefined && board[4].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].leftValue > cards[board[4].id].rightValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
@@ -241,6 +258,7 @@
                         } else if (newCardIndex === 6) {
                             // cima
                             if (board[3] !== undefined && board[3].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].topValue > cards[board[3].id].bottomValue) {
                                     board[3].creator = newCard.creator;
                                     board[3].invited = newCard.invited;
@@ -248,6 +266,7 @@
                             }
                             // direita
                             if (board[7] !== undefined && board[7].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].rightValue > cards[board[7].id].leftValue) {
                                     board[7].creator = newCard.creator;
                                     board[7].invited = newCard.invited;
@@ -256,6 +275,7 @@
                         } else if (newCardIndex === 7) {
                             // cima
                             if (board[4] !== undefined && board[4].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].topValue > cards[board[4].id].bottomValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
@@ -263,6 +283,7 @@
                             }
                             // direita
                             if (board[8] !== undefined && board[8].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].rightValue > cards[board[8].id].leftValue) {
                                     board[8].creator = newCard.creator;
                                     board[8].invited = newCard.invited;
@@ -270,6 +291,7 @@
                             }
                             // esquerda
                             if (board[6] !== undefined && board[6].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].leftValue > cards[board[6].id].rightValue) {
                                     board[6].creator = newCard.creator;
                                     board[6].invited = newCard.invited;
@@ -278,6 +300,7 @@
                         } else if (newCardIndex === 8) {
                             // cima
                             if (board[5] !== undefined && board[5].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].topValue > cards[board[5].id].bottomValue) {
                                     board[5].creator = newCard.creator;
                                     board[5].invited = newCard.invited;
@@ -285,11 +308,23 @@
                             }
                             // esquerda
                             if (board[7] !== undefined && board[7].id !== undefined) {
+                                console.log('-');
                                 if (cards[newCard.id].leftValue > cards[board[7].id].rightValue) {
                                     board[7].creator = newCard.creator;
                                     board[7].invited = newCard.invited;
                                 }
                             }
+                        }
+
+                        // Verificar se o tabuleiro está cheio
+                        var k;
+                        for (k = 0; i < board.length; i++) {
+                            if (board[k] === undefined || board[k].id === undefined) {
+                                break;
+                            }
+                        }
+                        if (k === board.length) {
+                            console.log('FINAL DE JOGO!');
                         }
 
                         // Remove used cards from creator hand
