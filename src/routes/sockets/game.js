@@ -91,10 +91,12 @@
                 db_games.select_id(req.game._id)
                     .then(function (game) {
 
-                        console.log('Old:');
-                        console.log(game.board);
-                        console.log('New:');
-                        console.log(board);
+                        /*
+                            console.log('Old:');
+                            console.log(game.board);
+                            console.log('New:');
+                            console.log(board);
+                        */
 
                         // Descobrir carta nova
                         var i, j, newCard, newCardIndex;
@@ -107,7 +109,6 @@
                             if (j === game.board.length && board[i].id !== undefined) {
                                 newCard = board[i];
                                 newCardIndex = i;
-                                console.log(newCard);
                                 break;
                             }
                         }
