@@ -3,6 +3,7 @@
     'use strict';
 
     var jwt = require('../auth/auth-jwt'),
+        cards = require('../../database/cards'),
         db_users = require('../../database/db-users'),
         db_games = require('../../database/db-games');
 
@@ -40,8 +41,18 @@
                                     });
                                 }
                                 if (game.cards.creator.length === 0 || game.cards.invited.length === 0) {
-                                    console.log('need cards');
-                                    // Asign cards to game
+                                    // Random cards 
+                                    var random_cards = cards;
+                                    random_cards.sort(function () {
+                                        return 0.5 - Math.random()
+                                    });
+                                    db_games.update_cards(game._id, random_cards)
+                                        .then(function (game) {
+                                            console.log('Enviando jogo com cartas.');
+                                            io.to(game._id).emit('game', {
+                                                game: game
+                                            });
+                                        });
                                 }
                             });
                     });
@@ -98,14 +109,10 @@
                                 io.to(req.room).emit('disconnect', {
                                     room: req.room
                                 });
-                                //socket.leave(req.room);
-                                console.log('O primeiro gajo saiu.');
 
                             })
                             .catch(function (err) {
                                 console.log(err);
-                                //socket.leave(req.room);
-                                console.log('O segundo gajo saiu.');
                             });
                     });
             });

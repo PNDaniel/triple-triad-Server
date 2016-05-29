@@ -164,4 +164,26 @@
         });
     };
 
+    exports.update_cards = function (id, cards) {
+        return new Promise(function (resolve, reject) {
+            Game.findByIdAndUpdate(id, {
+                "cards": {
+                    creator: cards.slice(0, 5),
+                    invited: cards.slice(5, 10)
+                }
+            },
+                {
+                    safe: true,
+                    upsert: true,
+                    new: true
+                }, function (err, game) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(game);
+                    }
+                });
+        });
+    };
+
 } ());
