@@ -49,8 +49,8 @@
     // Enable Session for PassportJS
     server.use(session({
         secret: env.token,
-        resave: false,
-        saveUninitialized: true
+        name: 'tid',
+	secure: false
     }));
 
     // Calls the router where all routes are called. This is done so the 'server.js' file is cleaner and more maintainable.
