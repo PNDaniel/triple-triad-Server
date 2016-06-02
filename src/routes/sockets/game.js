@@ -163,7 +163,7 @@
                                 console.log('cards[board[newCardIndex].id]: ');
                                 console.log(cards[board[newCardIndex].id]);
 
-                                console.log(cards[board[newCardIndex].id].bottomValue + ' | ' + cards[board[4].id].topValue);
+                                console.log(getCard(board[newCardIndex].id).bottomValue + ' | ' + getCard(board[4].id).topValue);
                                 if (cards[board[newCardIndex].id].bottomValue > cards[board[4].id].topValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
