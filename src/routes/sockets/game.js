@@ -42,7 +42,7 @@
                                 }
                                 if (game.cards.creator.length === 0 || game.cards.invited.length === 0) {
                                     // Random cards 
-                                    var random_cards = Object.assign({}, cards);
+                                    var random_cards = cards;
                                     random_cards.sort(function () {
                                         return 0.5 - Math.random()
                                     });
