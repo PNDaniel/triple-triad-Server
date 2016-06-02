@@ -4,7 +4,6 @@
 
     var jwt = require('../auth/auth-jwt'),
         cards = require('../../database/cards'),
-        random_cards = require('../../database/cards'),
         db_users = require('../../database/db-users'),
         db_games = require('../../database/db-games');
 
@@ -43,6 +42,7 @@
                                 }
                                 if (game.cards.creator.length === 0 || game.cards.invited.length === 0) {
                                     // Random cards 
+                                    var random_cards = Object.assign({}, cards);
                                     random_cards.sort(function () {
                                         return 0.5 - Math.random()
                                     });
@@ -65,6 +65,15 @@
                 for (var i = 0; i < list.length; i++) {
                     if (list[i].id === obj.id) {
                         return true;
+                    }
+                }
+                return false;
+            };
+
+            function getCard(id) {
+                for (var i = 0; i < cards.length; i++) {
+                    if (cards[i].id === id) {
+                        return cards[i];
                     }
                 }
                 return false;
