@@ -117,7 +117,7 @@
                             // direita
                             if (board[1] !== undefined && board[1].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 1.');
-                                if (cards[newCard.id].rightValue > cards[board[1].id].leftValue) {
+                                if (cards[newCardIndex].rightValue > cards[board[1].id].leftValue) {
                                     board[1].creator = newCard.creator;
                                     board[1].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 1.');
@@ -126,7 +126,7 @@
                             // baixo
                             if (board[3] !== undefined && board[3].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 3.');
-                                if (cards[newCard.id].bottomValue > cards[board[3].id].topValue) {
+                                if (cards[newCardIndex].bottomValue > cards[board[3].id].topValue) {
                                     board[3].creator = newCard.creator;
                                     board[3].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 3.');
@@ -136,7 +136,7 @@
                             // direita
                             if (board[2] !== undefined && board[2].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 2.');
-                                if (cards[newCard.id].rightValue > cards[board[2].id].leftValue) {
+                                if (cards[newCardIndex].rightValue > cards[board[2].id].leftValue) {
                                     board[2].creator = newCard.creator;
                                     board[2].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 2.');
@@ -145,7 +145,7 @@
                             // baixo
                             if (board[4] !== undefined && board[4].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 4.');
-                                if (cards[newCard.id].bottomValue > cards[board[4].id].topValue) {
+                                if (cards[newCardIndex].bottomValue > cards[board[4].id].topValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 4.');
@@ -154,7 +154,7 @@
                             // esquerda
                             if (board[0] !== undefined && board[0].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 0.');
-                                if (cards[newCard.id].leftValue > cards[board[0].id].rightValue) {
+                                if (cards[newCardIndex].leftValue > cards[board[0].id].rightValue) {
                                     board[0].creator = newCard.creator;
                                     board[0].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 0.');
@@ -164,7 +164,7 @@
                             // baixo
                             if (board[5] !== undefined && board[5].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 5.');
-                                if (cards[newCard.id].bottomValue > cards[board[5].id].topValue) {
+                                if (cards[newCardIndex].bottomValue > cards[board[5].id].topValue) {
                                     board[5].creator = newCard.creator;
                                     board[5].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 5.');
@@ -173,7 +173,7 @@
                             // esquerda
                             if (board[1] !== undefined && board[1].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 1.');
-                                if (cards[newCard.id].leftValue > cards[board[1].id].rightValue) {
+                                if (cards[newCardIndex].leftValue > cards[board[1].id].rightValue) {
                                     board[1].creator = newCard.creator;
                                     board[1].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 1.');
@@ -183,7 +183,7 @@
                             // cima
                             if (board[0] !== undefined && board[0].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 0.');
-                                if (cards[newCard.id].topValue > cards[board[0].id].bottomValue) {
+                                if (cards[newCardIndex].topValue > cards[board[0].id].bottomValue) {
                                     board[0].creator = newCard.creator;
                                     board[0].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 0.');
@@ -192,7 +192,7 @@
                             // direita
                             if (board[4] !== undefined && board[4].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 4.');
-                                if (cards[newCard.id].rightValue > cards[board[4].id].leftValue) {
+                                if (cards[newCardIndex].rightValue > cards[board[4].id].leftValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 4.');
@@ -201,7 +201,7 @@
                             // baixo
                             if (board[6] !== undefined && board[6].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 6.');
-                                if (cards[newCard.id].bottomValue > cards[board[6].id].topValue) {
+                                if (cards[newCardIndex].bottomValue > cards[board[6].id].topValue) {
                                     board[6].creator = newCard.creator;
                                     board[6].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 6.');
@@ -211,7 +211,7 @@
                             // cima
                             if (board[1] !== undefined && board[1].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 1.');
-                                if (cards[newCard.id].topValue > cards[board[1].id].bottomValue) {
+                                if (cards[newCardIndex].topValue > cards[board[1].id].bottomValue) {
                                     board[1].creator = newCard.creator;
                                     board[1].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 1.');
@@ -220,7 +220,7 @@
                             // direita
                             if (board[5] !== undefined && board[5].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 5.');
-                                if (cards[newCard.id].rightValue > cards[board[5].id].leftValue) {
+                                if (cards[newCardIndex].rightValue > cards[board[5].id].leftValue) {
                                     board[5].creator = newCard.creator;
                                     board[5].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 5.');
@@ -229,7 +229,7 @@
                             // baixo
                             if (board[7] !== undefined && board[7].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 7.');
-                                if (cards[newCard.id].bottomValue > cards[board[7].id].topValue) {
+                                if (cards[newCardIndex].bottomValue > cards[board[7].id].topValue) {
                                     board[7].creator = newCard.creator;
                                     board[7].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 7.');
@@ -238,7 +238,7 @@
                             // esquerda
                             if (board[3] !== undefined && board[3].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 3.');
-                                if (cards[newCard.id].leftValue > cards[board[3].id].rightValue) {
+                                if (cards[newCardIndex].leftValue > cards[board[3].id].rightValue) {
                                     board[3].creator = newCard.creator;
                                     board[3].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 3.');
@@ -248,7 +248,7 @@
                             // cima
                             if (board[2] !== undefined && board[2].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 2.');
-                                if (cards[newCard.id].topValue > cards[board[2].id].bottomValue) {
+                                if (cards[newCardIndex].topValue > cards[board[2].id].bottomValue) {
                                     board[2].creator = newCard.creator;
                                     board[2].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 2.');
@@ -257,7 +257,7 @@
                             // baixo
                             if (board[8] !== undefined && board[8].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 8.');
-                                if (cards[newCard.id].bottomValue > cards[board[8].id].topValue) {
+                                if (cards[newCardIndex].bottomValue > cards[board[8].id].topValue) {
                                     board[8].creator = newCard.creator;
                                     board[8].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 8.');
@@ -266,7 +266,7 @@
                             // esquerda
                             if (board[4] !== undefined && board[4].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 4.');
-                                if (cards[newCard.id].leftValue > cards[board[4].id].rightValue) {
+                                if (cards[newCardIndex].leftValue > cards[board[4].id].rightValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 4.');
@@ -276,7 +276,7 @@
                             // cima
                             if (board[3] !== undefined && board[3].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 3.');
-                                if (cards[newCard.id].topValue > cards[board[3].id].bottomValue) {
+                                if (cards[newCardIndex].topValue > cards[board[3].id].bottomValue) {
                                     board[3].creator = newCard.creator;
                                     board[3].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 3.');
@@ -285,7 +285,7 @@
                             // direita
                             if (board[7] !== undefined && board[7].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 7.');
-                                if (cards[newCard.id].rightValue > cards[board[7].id].leftValue) {
+                                if (cards[newCardIndex].rightValue > cards[board[7].id].leftValue) {
                                     board[7].creator = newCard.creator;
                                     board[7].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 7.');
@@ -295,7 +295,7 @@
                             // cima
                             if (board[4] !== undefined && board[4].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 4.');
-                                if (cards[newCard.id].topValue > cards[board[4].id].bottomValue) {
+                                if (cards[newCardIndex].topValue > cards[board[4].id].bottomValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 4.');
@@ -304,7 +304,7 @@
                             // direita
                             if (board[8] !== undefined && board[8].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 8.');
-                                if (cards[newCard.id].rightValue > cards[board[8].id].leftValue) {
+                                if (cards[newCardIndex].rightValue > cards[board[8].id].leftValue) {
                                     board[8].creator = newCard.creator;
                                     board[8].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 8.');
@@ -313,7 +313,7 @@
                             // esquerda
                             if (board[6] !== undefined && board[6].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 6.');
-                                if (cards[newCard.id].leftValue > cards[board[6].id].rightValue) {
+                                if (cards[newCardIndex].leftValue > cards[board[6].id].rightValue) {
                                     board[6].creator = newCard.creator;
                                     board[6].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 6.');
@@ -323,7 +323,7 @@
                             // cima
                             if (board[5] !== undefined && board[5].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 5.');
-                                if (cards[newCard.id].topValue > cards[board[5].id].bottomValue) {
+                                if (cards[newCardIndex].topValue > cards[board[5].id].bottomValue) {
                                     board[5].creator = newCard.creator;
                                     board[5].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 5.');
@@ -332,7 +332,7 @@
                             // esquerda
                             if (board[7] !== undefined && board[7].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 7.');
-                                if (cards[newCard.id].leftValue > cards[board[7].id].rightValue) {
+                                if (cards[newCardIndex].leftValue > cards[board[7].id].rightValue) {
                                     board[7].creator = newCard.creator;
                                     board[7].invited = newCard.invited;
                                     console.log('Greater ' + newCardIndex + ' with 7.');
