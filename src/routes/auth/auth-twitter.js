@@ -14,7 +14,7 @@
         passport.use(new Strategy({
             consumerKey: secret_tw.consumerKey,
             consumerSecret: secret_tw.consumerSecret,
-            callbackURL: 'http://' + env.url + '/api/auth/twitter/callback'
+            callbackURL: 'http://' + env.url + ':' + env.port  + '/api/auth/twitter/callback'
         },
             function (accessToken, refreshToken, profile, next) {
                 var user = {
