@@ -151,7 +151,8 @@
                                 console.log('Comparing ' + newCardIndex + ' with 4.');
 
                                 console.log('board[newCardIndex].id = ' + board[newCardIndex].id);
-                                console.log('cards[board[newCardIndex].id] = ' + cards[board[newCardIndex].id]);
+                                console.log('cards[board[newCardIndex].id]: ');
+                                console.log(cards[board[newCardIndex].id]);
 
                                 console.log(cards[board[newCardIndex].id].bottomValue + ' | ' + cards[board[4].id].topValue);
                                 if (cards[board[newCardIndex].id].bottomValue > cards[board[4].id].topValue) {
