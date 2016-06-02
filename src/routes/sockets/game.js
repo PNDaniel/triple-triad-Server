@@ -117,6 +117,7 @@
                             // direita
                             if (board[1] !== undefined && board[1].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 1.');
+                                console.log(cards[board[newCardIndex].id].rightValue + ' | ' + cards[board[1].id].leftValue);
                                 if (cards[board[newCardIndex].id].rightValue > cards[board[1].id].leftValue) {
                                     board[1].creator = newCard.creator;
                                     board[1].invited = newCard.invited;
@@ -145,6 +146,7 @@
                             // baixo
                             if (board[4] !== undefined && board[4].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 4.');
+                                console.log(cards[board[newCardIndex].id].bottomValue + ' | ' + cards[board[4].id].topValue);
                                 if (cards[board[newCardIndex].id].bottomValue > cards[board[4].id].topValue) {
                                     board[4].creator = newCard.creator;
                                     board[4].invited = newCard.invited;
