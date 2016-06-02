@@ -389,6 +389,9 @@
                                             }
                                         }
                                         if ((sumCreator + sumInvited) === game.board.length) {
+                                            io.to(game._id).emit('game', {
+                                                game: game
+                                            });
                                             db_games.select_id(game._id)
                                                 .then(function (game) {
                                                     if (game.ongoing) {
