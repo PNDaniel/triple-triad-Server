@@ -349,6 +349,7 @@
                                 }
                             }
                         }
+
                         // Remove used cards from invited hand
                         for (var i = 0; i < req.game.cards.invited.length; i++) {
                             for (var j = 0; j < board.length; j++) {
@@ -358,13 +359,11 @@
                                 }
                             }
                         }
+
                         db_games.update_board(req.game._id, board)
                             .then(function (game) {
                                 db_games.update_cards(game._id, req.game.cards.creator, req.game.cards.invited)
                                     .then(function (game) {
-                                        io.to(game._id).emit('game', {
-                                            game: game
-                                        });
                                         // Verificar se o tabuleiro está cheio
                                         var sumCreator = 0, sumInvited = 0;
                                         for (var k = 0; k < game.board.length; k++) {
@@ -409,6 +408,10 @@
                                                             });
                                                     }
                                                 });
+                                        } else {
+                                            io.to(game._id).emit('game', {
+                                                game: game
+                                            });
                                         }
                                     });
                             })
