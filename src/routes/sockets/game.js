@@ -113,6 +113,9 @@
                             }
                         }
 
+                        console.log('Board:');
+                        console.log(board);
+
                         if (newCardIndex === 0) {
                             // direita
                             if (board[1] !== undefined && board[1].id !== undefined) {
@@ -146,6 +149,10 @@
                             // baixo
                             if (board[4] !== undefined && board[4].id !== undefined) {
                                 console.log('Comparing ' + newCardIndex + ' with 4.');
+
+                                console.log('board[newCardIndex].id = ' + board[newCardIndex].id);
+                                console.log('cards[board[newCardIndex].id] = ' + cards[board[newCardIndex].id]);
+
                                 console.log(cards[board[newCardIndex].id].bottomValue + ' | ' + cards[board[4].id].topValue);
                                 if (cards[board[newCardIndex].id].bottomValue > cards[board[4].id].topValue) {
                                     board[4].creator = newCard.creator;
