@@ -3,7 +3,6 @@
     'use strict';
 
     var jwt = require('../auth/auth-jwt'),
-        extend = require('util')._extend,
         cards = require('../../database/cards'),
         db_users = require('../../database/db-users'),
         db_games = require('../../database/db-games');
@@ -43,7 +42,7 @@
                                 }
                                 if (game.cards.creator.length === 0 || game.cards.invited.length === 0) {
                                     // Random cards 
-                                    var random_cards = extend({}, cards);
+                                    var random_cards = Object.assign({}, cards);
                                     random_cards.sort(function () {
                                         return 0.5 - Math.random()
                                     });
